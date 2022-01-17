@@ -10,6 +10,9 @@ public class BallStart : MonoBehaviour
     public Vector3 velocity;
     public TurnManager turnManager;
     // Start is called before the first frame update
+    [SerializeField]
+    //private ParticleSystem ParticleSystem;
+
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
@@ -34,6 +37,8 @@ public class BallStart : MonoBehaviour
     private void FixedUpdate()
     {
         velocity = rb.velocity;
+
+
         
         if(velocity.x==0 && velocity.z ==0)
         {
@@ -41,6 +46,10 @@ public class BallStart : MonoBehaviour
             Destroy(this.gameObject, 3f);
         }
     }
+
+
+
+
     void Update()
     {
 

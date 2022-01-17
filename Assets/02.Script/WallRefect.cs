@@ -21,7 +21,9 @@ public class WallRefect : MonoBehaviour
             Rigidbody ballRB = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 velocity = collision.gameObject.GetComponent<BallStart>().velocity;
             ballRB.velocity = calculateReflect(velocity, Vector3.zero, -collision.GetContact(0).normal);
-        }else if(collision.gameObject.CompareTag("ENEMY"))
+            
+        }
+        else if(collision.gameObject.CompareTag("ENEMY"))
         {
             Rigidbody ballRB = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 velocity = collision.gameObject.GetComponent<EnemyStart>().velocity;
