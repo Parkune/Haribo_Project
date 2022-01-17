@@ -130,9 +130,19 @@ public class Gimmicks : MonoBehaviour
             {
 
                 //GimmickNum=CrossBombCube
-                Reflect(collision);
-                
-
+                //Reflect(collision);
+             
+                Vector3 velo = collision.gameObject.GetComponent<BallStart>().velocity;
+                Vector3 trPosition = collision.gameObject.GetComponent<Transform>().position;
+                Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+                float speed = -velo.magnitude;
+                Vector3 reflectVelocity  = Vector3.Reflect(velo, collision.contacts[0].normal);
+                rb.velocity = reflectVelocity * Mathf.Max(speed, 1f);
+                //Vector3 vec = new Vector3(trPosition.x * reflectVelocity.x, transform.position.z * reflectVelocity.y, trPosition.z * reflectVelocity.z); ;
+                //collision.contacts[0].point
+                GameObject copy = Instantiate(CopyBall, trPosition , Quaternion.identity);
+                Rigidbody copyrb = copy.GetComponent<Rigidbody>();
+                copyrb.velocity = reflectVelocity * Mathf.Max(speed, 1f);
             }
         }
 
