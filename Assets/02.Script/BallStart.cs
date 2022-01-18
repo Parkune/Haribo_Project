@@ -11,15 +11,21 @@ public class BallStart : MonoBehaviour
     public Vector3 velocity;
     public TurnManager turnManager;
     // Start is called before the first frame update
-    [SerializeField]
+    
+    public bool Copy;
     //private ParticleSystem ParticleSystem;
 
+    [SerializeField]
+    private AudioClip collisionSound;
+    AudioSource audioSource;
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
         rb.velocity = startVelocity;
         turnManager = GameObject.FindGameObjectWithTag("TURNMANAGER").GetComponent<TurnManager>();
         turnManager.playerTurnOff();
+
+        audioSource = this.gameObject.GetComponent<AudioSource>();
     }
 
     void TurnOn()
@@ -45,7 +51,10 @@ public class BallStart : MonoBehaviour
         }
     }
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        this.audioSource.Play();
+    }
 
 
     void Update()

@@ -29,8 +29,10 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
 
+        
         zPosition += Input.GetAxisRaw("Horizontal") * Time.deltaTime * moveSpeed;
-        transform.position = new Vector3(transform.position.x, 0, Mathf.Clamp(zPosition, -15, 15));
+        zPosition =  Mathf.Clamp(zPosition, -12, 12);
+        transform.position = new Vector3(transform.position.x, 0, zPosition);
     }
     //회전을 다른 방식으로 제어한다.
     /*        if (zPosition >= 12)

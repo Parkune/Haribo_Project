@@ -47,8 +47,6 @@ public class Playershooter : MonoBehaviour
         PowerGage.minValue = 0;
         lr = posin.GetComponent<LineRenderer>();
         
-
-
     }
 
    
@@ -87,7 +85,8 @@ public class Playershooter : MonoBehaviour
                 circleQuad.transform.rotation = Quaternion.Euler(90,0,0);
                 lr.SetPosition(1, posin.position + posin.right * maxDistance);
             }
-        } else
+        } 
+        else
         {
             lr.SetPosition(1, posin.position + posin.right * maxDistance);
 

@@ -32,10 +32,14 @@ public class PlayerRotation : MonoBehaviour
         RaycastHit hitResult;
         if (Physics.Raycast(ray, out hitResult))
         {
-            float dy = hitResult.point.z - oPosition.z;
-            float dx = hitResult.point.x - oPosition.x;
-            float rotateDegree = Mathf.Atan2(-dy, dx) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, rotateDegree, 0);
+            if(hitResult.collider.gameObject.CompareTag("STAGE"))
+            { 
+                float dy = hitResult.point.z - oPosition.z;
+                float dx = hitResult.point.x - oPosition.x;
+                float rotateDegree = Mathf.Atan2(-dy, dx) * Mathf.Rad2Deg;
+                rotateDegree = Mathf.Clamp(rotateDegree, -62, 62);
+                transform.rotation = Quaternion.Euler(0f, rotateDegree, 0);
+            }
         }
 
             //다음은 아크탄젠트(arctan, 역탄젠트)로 게임 오브젝트의 좌표와 마우스 포인트의 좌표를
