@@ -71,6 +71,7 @@ public class Playershooter : MonoBehaviour
             return;
         }
         posin.gameObject.SetActive(true);
+        circleQuad.SetActive(true);
         lr.SetPosition(0, posin.position);
         if (Physics.Raycast(posin.position, posin.right, out hitPoint, maxDistance, 1 ))
         {
@@ -102,6 +103,7 @@ public class Playershooter : MonoBehaviour
             // PowerGage.value = nowPower;
             nowPower = Mathf.Clamp(MaxPower * (Mathf.Cos(Time.time * gageSpeed)), 0, 100);
             PowerGage.value = nowPower;
+            
         } 
         if (Input.GetKeyUp(KeyCode.Space))
         {    
@@ -112,6 +114,7 @@ public class Playershooter : MonoBehaviour
             uiManager.displayBallCT();
             turn = false;
             posin.gameObject.SetActive(false);
+            circleQuad.SetActive(false);
         }
 
     }

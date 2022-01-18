@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1bf9ae83961af5d42abbbf8163f7b384, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,7 +114,6 @@ MonoBehaviour:
   startVelocity: {x: 30, y: 0, z: 30}
   velocity: {x: 0, y: 0, z: 0}
   turnManager: {fileID: 0}
-  ParticleSystem: {fileID: 0}
 --- !u!114 &7629176091804755417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +162,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 089794af38bd6e44484060a442a92a22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,13 +38,10 @@ public class BallStart : MonoBehaviour
     private void FixedUpdate()
     {
         velocity = rb.velocity;
-
-
-        
-        if(velocity.x==0 && velocity.z ==0)
+        if(Math.Abs(velocity.x) < 0.05f  && Math.Abs(velocity.y) < 0.05f)
         {
             Invoke("TurnOn", 3f);
-            Destroy(this.gameObject, 3f);
+            Destroy(this.gameObject, 3.1f);
         }
     }
 

@@ -71,7 +71,8 @@ public class EnemyReflect : MonoBehaviour
             Rigidbody2D ballOtherRb = collision.gameObject.GetComponent<Rigidbody2D>();
             Vector3 v1 = this.gameObject.GetComponent<BallStart>().velocity;
             Vector3 v2 = collision.gameObject.GetComponent<BallStart>().velocity;
-            (ballMeRb.velocity, ballOtherRb.velocity) = calculateBall2BallColision(v1, v2, ballMeRb.position, ballOtherRb.position);   
+            (ballMeRb.velocity, ballOtherRb.velocity) = calculateBall2BallColision(v1, v2, ballMeRb.position, ballOtherRb.position);
+
         }
     }
 
@@ -80,6 +81,10 @@ public class EnemyReflect : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("BALL"))
+        {
+            this.gameObject.GetComponent<Enemy>().Damage(1);
+        }
 
 /*       if (collision.collider.tag == "BALL")
         {
