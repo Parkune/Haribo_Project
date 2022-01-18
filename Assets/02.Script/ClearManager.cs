@@ -12,14 +12,34 @@ public class ClearManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       enemys = GameObject.FindGameObjectsWithTag("ENEMY");
+        findEnemy();
+        for (int i = 0; i < enemys.Length; i++)
+        {
+            enemyList.Add(enemys[i]);
+        }
     }
-    void enemyDie(string enemyName)
+    void findEnemy()
+    {
+        enemys = GameObject.FindGameObjectsWithTag("ENEMY");
+    }
+    public void enemyDie(string enemyName)
     {
         //에너미가 죽으면 리스트의 오브젝트들을 비교한다.
-        for()
+        for (int i = 0; i < enemys.Length; i++)
         {
-
+            if (enemyList[i].name == enemyName)
+            {
+                
+                enemyList.RemoveAt(i);
+                
+                if (enemyList.Count == 0)
+                {
+                    print("게임종료");
+                }
+                Invoke("findEnemy", 0.9f);
+                return;
+            }
+            
         }
         //내 이름과 리스트에 담긴 이름이 같다면 리스트에서 제거한다.
 

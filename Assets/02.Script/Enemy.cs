@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour, IenemyStatus
         if(enemyNum == 1)
         {
             enemyName = "apple";
-            enemyHealth = 3;
+            enemyHealth = 1;
             enemyResist = 0.3f;
         } 
         else if(enemyNum == 2)
@@ -36,7 +36,8 @@ public class Enemy : MonoBehaviour, IenemyStatus
        hpSlider.value -= damage;
        if(enemyHealth <= 0)
        {
-           Destroy(this.gameObject, 0.4f);
+           stageManager.GetComponent<ClearManager>().enemyDie(this.gameObject.name);
+           Destroy(this.gameObject, 0.8f);
        }
     }
     public void Resist(float resist)
@@ -49,6 +50,8 @@ public class Enemy : MonoBehaviour, IenemyStatus
     {
 
     }
+    [SerializeField]
+    private GameObject stageManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +60,7 @@ public class Enemy : MonoBehaviour, IenemyStatus
             hpSlider.maxValue = enemyHealth;
             hpSlider.minValue = 0;
             hpSlider.value = hpSlider.maxValue;
-
+        stageManager = GameObject.FindGameObjectWithTag("STAGEMANAGER");
         
         Resist(enemyResist);
         //Damage(damage);
