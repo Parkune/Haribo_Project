@@ -43,6 +43,7 @@ public class Playershooter : MonoBehaviour
         nowPower = PowerGage.value;
         PowerGage.maxValue = MaxPower;
         PowerGage.minValue = 0;
+   
         lr = posin.GetComponent<LineRenderer>();
         
     }
@@ -52,8 +53,8 @@ public class Playershooter : MonoBehaviour
     void Update()
     {
  
-        float z = -PowerGage.value * Mathf.Sin(transform.eulerAngles.y * Mathf.Deg2Rad)/1.5f;
-        float x = PowerGage.value * Mathf.Cos(transform.eulerAngles.y * Mathf.Deg2Rad)/1.5f;
+        float z = -PowerGage.value * Mathf.Sin(transform.eulerAngles.y * Mathf.Deg2Rad)/2.3f;
+        float x = PowerGage.value * Mathf.Cos(transform.eulerAngles.y * Mathf.Deg2Rad)/2.3f;
         Ray ray;
         RaycastHit hitPoint;
 

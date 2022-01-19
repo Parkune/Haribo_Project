@@ -38,8 +38,9 @@ public class ClearManager : MonoBehaviour
                 }
                 Invoke("findEnemy", 0.9f);
                 return;
+
             }
-            
+        
         }
         //내 이름과 리스트에 담긴 이름이 같다면 리스트에서 제거한다.
 

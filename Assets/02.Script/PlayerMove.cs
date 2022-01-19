@@ -17,12 +17,13 @@ public class PlayerMove : MonoBehaviour
 
     public float rtationSpeed = 100f;
 
-    public float zPosition = 0f;
+    public float zPosition;
     public float moveSpeed = 10f;
     // Start is called before the first frame update
     void Start()
     {
         Transform tr = this.gameObject.transform;
+        zPosition = tr.transform.position.x;
     }
 
     // Update is called once per frame
@@ -31,8 +32,8 @@ public class PlayerMove : MonoBehaviour
 
         
         zPosition += Input.GetAxisRaw("Horizontal") * Time.deltaTime * moveSpeed;
-        zPosition =  Mathf.Clamp(zPosition, -12, 12);
-        transform.position = new Vector3(transform.position.x, 0, zPosition);
+        zPosition =  Mathf.Clamp(zPosition, 1, 7);
+        transform.position = new Vector3(zPosition, 0, transform.position.z);
     }
     //회전을 다른 방식으로 제어한다.
     /*        if (zPosition >= 12)

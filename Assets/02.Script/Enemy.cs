@@ -36,7 +36,8 @@ public class Enemy : MonoBehaviour, IenemyStatus
        hpSlider.value -= damage;
        if(enemyHealth <= 0)
        {
-           stageManager.GetComponent<ClearManager>().enemyDie(this.gameObject.name);
+            stageManager.GetComponent<ClearManager>().enemyDie(this.gameObject.name);
+            print(this.gameObject.name);
            Destroy(this.gameObject, 0.8f);
        }
     }

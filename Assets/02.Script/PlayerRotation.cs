@@ -20,14 +20,15 @@ public class PlayerRotation : MonoBehaviour
 
         //카메라가 앞면에서 뒤로 보고 있기 때문에, 마우스 position의 z축 정보에
         //게임 오브젝트와 카메라와의 z축의 차이를 입력시켜줘야 합니다.
-        mPosition.y = oPosition.y - Camera.main.transform.position.y;
-        /*        mPosition.z = oPosition.z - Camera.main.transform.position.z;
+        mPosition.z = oPosition.x - Camera.main.transform.position.x;
+        /*      mPosition.z = oPosition.z - Camera.main.transform.position.z;
                 mPosition.x = oPosition.x - Camera.main.transform.position.x;*/
 
         //화면의 픽셀별로 변화되는 마우스의 좌표를 유니티의 좌표로 변화해 줘야 합니다.
         //그래야, 위치를 찾아갈 수 있겠습니다.
       
         Vector3 target = Camera.main.ScreenToWorldPoint(mPosition);
+        //print(target);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitResult;
         if (Physics.Raycast(ray, out hitResult))
@@ -37,7 +38,8 @@ public class PlayerRotation : MonoBehaviour
                 float dy = hitResult.point.z - oPosition.z;
                 float dx = hitResult.point.x - oPosition.x;
                 float rotateDegree = Mathf.Atan2(-dy, dx) * Mathf.Rad2Deg;
-                rotateDegree = Mathf.Clamp(rotateDegree, -62, 62);
+                print(rotateDegree);
+                rotateDegree = Mathf.Clamp(rotateDegree, -180, -90);
                 transform.rotation = Quaternion.Euler(0f, rotateDegree, 0);
             }
         }
