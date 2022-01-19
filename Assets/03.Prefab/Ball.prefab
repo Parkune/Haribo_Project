@@ -117,6 +117,7 @@ MonoBehaviour:
   turnManager: {fileID: 0}
   Copy: 0
   collisionSound: {fileID: 0}
+  stageNum: 6
 --- !u!114 &7629176091804755417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,11 +140,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.0005
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!96 &5247627147813487844
 TrailRenderer:

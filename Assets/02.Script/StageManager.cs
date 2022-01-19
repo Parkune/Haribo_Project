@@ -5,15 +5,15 @@ using UnityEngine;
 public class StageManager : MonoBehaviour
 {
 
-    public int stage;
-    public int ball;
 
     public Dictionary<int, int> Ballct = new Dictionary<int, int>();
+    public Dictionary<int, float> stageFrictionForce = new Dictionary<int, float>();
 
 
     private void Awake()
     {
-        AddData();
+        AddData( );
+        FrictionForceData();
     }
 
     // Start is called before the first frame update
@@ -26,6 +26,17 @@ public class StageManager : MonoBehaviour
     void Update()
     {
         
+    }
+    void FrictionForceData()
+    {
+        stageFrictionForce.Add(1, 0.1f);
+        stageFrictionForce.Add(2, 0.2f);
+        stageFrictionForce.Add(3, 0.3f);
+        stageFrictionForce.Add(4, 0.4f);
+        stageFrictionForce.Add(5, 0.5f);
+        stageFrictionForce.Add(6, 0.6f);
+        stageFrictionForce.Add(7, 0.7f);
+        stageFrictionForce.Add(8, 0.8f);
     }
 
     void AddData()

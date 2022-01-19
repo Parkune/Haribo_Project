@@ -23,8 +23,6 @@ public class Playershooter : MonoBehaviour
     private UIManager uiManager;
     public bool turn;
 
-
-
     //조준선을 그리기 위한 함수
     [SerializeField]
     private LineRenderer lr;

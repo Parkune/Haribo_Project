@@ -18,13 +18,22 @@ public class BallStart : MonoBehaviour
     [SerializeField]
     private AudioClip collisionSound;
     AudioSource audioSource;
+
+    StageManager stageManager;
+    public int stageNum;
+    private float frictionforce;
+    private void Awake()
+    {
+        stageManager = GameObject.FindGameObjectWithTag("STAGEMANAGER").GetComponent<StageManager>();
+        stageManager.stageFrictionForce.TryGetValue(stageNum, out frictionforce);
+    }
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
         rb.velocity = startVelocity;
+        this.gameObject.GetComponent<Collider>().material.dynamicFriction = frictionforce;
         turnManager = GameObject.FindGameObjectWithTag("TURNMANAGER").GetComponent<TurnManager>();
         turnManager.playerTurnOff();
-
         audioSource = this.gameObject.GetComponent<AudioSource>();
     }
 
@@ -56,9 +65,4 @@ public class BallStart : MonoBehaviour
         this.audioSource.Play();
     }
 
-
-    void Update()
-    {
-
-    }
 }
