@@ -53,8 +53,8 @@ public class Playershooter : MonoBehaviour
     void Update()
     {
  
-        float z = -PowerGage.value * Mathf.Sin(transform.eulerAngles.y * Mathf.Deg2Rad)/2.5f;
-        float x = PowerGage.value * Mathf.Cos(transform.eulerAngles.y * Mathf.Deg2Rad)/2.5f;
+        float z = -PowerGage.value * Mathf.Sin(transform.eulerAngles.y * Mathf.Deg2Rad)/3f;
+        float x = PowerGage.value * Mathf.Cos(transform.eulerAngles.y * Mathf.Deg2Rad)/3f;
         Ray ray;
         RaycastHit hitPoint;
 

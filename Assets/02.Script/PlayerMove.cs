@@ -19,6 +19,7 @@ public class PlayerMove : MonoBehaviour
 
     public float zPosition;
     public float moveSpeed = 10f;
+    Transform tr;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +34,7 @@ public class PlayerMove : MonoBehaviour
         
         zPosition += Input.GetAxisRaw("Horizontal") * Time.deltaTime * moveSpeed;
         zPosition =  Mathf.Clamp(zPosition, 1, 7);
-        transform.position = new Vector3(zPosition, 0, transform.position.z);
+        transform.position = new Vector3(zPosition, this.gameObject.transform.position.y, transform.position.z);
     }
     //회전을 다른 방식으로 제어한다.
     /*        if (zPosition >= 12)
