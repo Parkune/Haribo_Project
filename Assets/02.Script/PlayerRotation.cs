@@ -38,7 +38,6 @@ public class PlayerRotation : MonoBehaviour
                 float dy = hitResult.point.z - oPosition.z;
                 float dx = hitResult.point.x - oPosition.x;
                 float rotateDegree = Mathf.Atan2(-dy, dx) * Mathf.Rad2Deg;
-                print(rotateDegree);
                 rotateDegree = Mathf.Clamp(rotateDegree, -180, -90);
                 transform.rotation = Quaternion.Euler(0f, rotateDegree, 0);
             }

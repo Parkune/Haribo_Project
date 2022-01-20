@@ -2,16 +2,19 @@ using System.Security.Cryptography.X509Certificates;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClearManager : MonoBehaviour
 {
 
     public List<GameObject> enemyList = new List<GameObject>();
+    public GameObject ClearPanel;
     [SerializeField]
     public GameObject[] enemys;
     // Start is called before the first frame update
     void Start()
     {
+        ClearPanel.SetActive(false);
         findEnemy();
         for (int i = 0; i < enemys.Length; i++)
         {
@@ -35,6 +38,9 @@ public class ClearManager : MonoBehaviour
                 if (enemyList.Count == 0)
                 {
                     print("게임종료");
+                    Time.timeScale = 0.01f;
+                    ClearPanel.SetActive(true);
+
                 }
                 Invoke("findEnemy", 0.9f);
                 return;

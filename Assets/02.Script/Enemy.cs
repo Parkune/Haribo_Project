@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour, IenemyStatus
         if(enemyNum == 1)
         {
             enemyName = "apple";
-            enemyHealth = 1;
+            enemyHealth = 3;
             enemyResist = 0.3f;
         } 
         else if(enemyNum == 2)

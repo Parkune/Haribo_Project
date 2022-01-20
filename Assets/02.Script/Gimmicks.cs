@@ -37,7 +37,7 @@ public class Gimmicks : MonoBehaviour
         {
             Material mat = this.gameObject.GetComponent<Renderer>().material;
             Color color = mat.color;
-            color.a = 0.1f;
+            color.a = 0.3f;
             mat.color = color;
         }
     }

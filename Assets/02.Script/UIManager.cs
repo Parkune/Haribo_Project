@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public Text displayBall;
     public GameObject timebtnon;
     public GameObject timebtnoff;
+    public GameObject loobyBtn;
     public int displayBallCount
     {
         get { return shooterScript.ballLimit; }
