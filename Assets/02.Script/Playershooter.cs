@@ -8,6 +8,7 @@ public class Playershooter : MonoBehaviour
     public GameObject whiteball;
     public Transform posin;
     public float speed = 5f;
+    public Animator anim;
     
 
 
@@ -45,6 +46,7 @@ public class Playershooter : MonoBehaviour
         PowerGage.minValue = 0;
    
         lr = posin.GetComponent<LineRenderer>();
+        anim = GetComponentInChildren<Animator>();
         
     }
 
@@ -101,6 +103,7 @@ public class Playershooter : MonoBehaviour
             // PowerGage.value = nowPower;
             nowPower = Mathf.Clamp(MaxPower * (Mathf.Cos(Time.time * gageSpeed)), 0, 100);
             PowerGage.value = nowPower;
+            anim.SetBool("Shooting", true);
             
         } 
         if (Input.GetKeyUp(KeyCode.Space))
@@ -113,6 +116,7 @@ public class Playershooter : MonoBehaviour
             turn = false;
             posin.gameObject.SetActive(false);
             circleQuad.SetActive(false);
+            anim.SetBool("Shooting", false);
         }
 
     }
