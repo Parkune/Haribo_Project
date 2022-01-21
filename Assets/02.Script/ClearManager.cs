@@ -40,7 +40,7 @@ public class ClearManager : MonoBehaviour
                     print("게임종료");
                     Time.timeScale = 0.01f;
                     ClearPanel.SetActive(true);
-
+                    
                 }
                 Invoke("findEnemy", 0.9f);
                 return;

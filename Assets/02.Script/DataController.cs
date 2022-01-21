@@ -19,7 +19,6 @@ public class DataController : MonoBehaviour
     {
         get
         {
-            print("실행은되는거니..");
             if (!_instance)
             {
                 _container = new GameObject();
@@ -51,10 +50,15 @@ public class DataController : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         LoadGameData();
         SaveGameData();
+    }
+
+    private void Start()
+    {
+
     }
 
     // 저장된 게임 불러오기

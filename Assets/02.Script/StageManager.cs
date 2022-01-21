@@ -8,12 +8,17 @@ public class StageManager : MonoBehaviour
 
     public Dictionary<int, int> Ballct = new Dictionary<int, int>();
     public Dictionary<int, float> stageFrictionForce = new Dictionary<int, float>();
-
+    public List<GameObject> stageList = new List<GameObject>();
 
     private void Awake()
     {
         AddData( );
-        FrictionForceData();
+         FrictionForceData();
+        GameObject[] stage = GameObject.FindGameObjectsWithTag("STAGE");
+
+        int selectStageNum = GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().StagrNum;
+        stage[selectStageNum].SetActive(true);
+        //stageList[selectStageNum].SetActive(true);
     }
 
     // Start is called before the first frame update
