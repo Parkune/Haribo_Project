@@ -9,7 +9,7 @@ public class Playershooter : MonoBehaviour
     public Transform posin;
     public float speed = 5f;
     public Animator anim;
-    
+
 
 
     //파워게이지를 제어하는 함수
@@ -44,23 +44,23 @@ public class Playershooter : MonoBehaviour
         nowPower = PowerGage.value;
         PowerGage.maxValue = MaxPower;
         PowerGage.minValue = 0;
-   
+
         lr = posin.GetComponent<LineRenderer>();
         anim = GetComponentInChildren<Animator>();
     }
 
-   
+
     // Update is called once per frame
     void Update()
     {
- 
-        float z = -PowerGage.value * Mathf.Sin(transform.eulerAngles.y * Mathf.Deg2Rad)/3f;
-        float x = PowerGage.value * Mathf.Cos(transform.eulerAngles.y * Mathf.Deg2Rad)/3f;
+
+        float z = -PowerGage.value * Mathf.Sin(transform.eulerAngles.y * Mathf.Deg2Rad) / 3f;
+        float x = PowerGage.value * Mathf.Cos(transform.eulerAngles.y * Mathf.Deg2Rad) / 3f;
         Ray ray;
         RaycastHit hitPoint;
 
         // print(v);
-        if(turn == false)
+        if (turn == false)
         {
             return;
         }
@@ -71,10 +71,28 @@ public class Playershooter : MonoBehaviour
         posin.gameObject.SetActive(true);
         circleQuad.SetActive(true);
         lr.SetPosition(0, posin.position);
-        if (Physics.Raycast(posin.position, posin.right, out hitPoint, maxDistance, 1 ))
+        if (Physics.Raycast(posin.position, posin.right, out hitPoint, maxDistance, 1))
         {
-           if(hitPoint.transform.CompareTag("WALL"))
-            { 
+            if (hitPoint.transform.CompareTag("WALL"))
+            {
+                lr.SetPosition(1, hitPoint.point);
+                circleQuad.transform.position = hitPoint.point + hitPoint.normal.normalized;
+                circleQuad.transform.rotation = Quaternion.Euler(90, 0, 0);
+            }
+            else if (hitPoint.transform.CompareTag("JELLY"))
+            {
+                lr.SetPosition(1, hitPoint.point);
+                circleQuad.transform.position = hitPoint.point + hitPoint.normal.normalized;
+                circleQuad.transform.rotation = Quaternion.Euler(90, 0, 0);
+            }
+            else if (hitPoint.transform.CompareTag("ENEMY"))
+            {
+                lr.SetPosition(1, hitPoint.point);
+                circleQuad.transform.position = hitPoint.point + hitPoint.normal.normalized;
+                circleQuad.transform.rotation = Quaternion.Euler(90, 0, 0);
+            }
+            else if (hitPoint.transform.CompareTag("CUBE"))
+            {
                 lr.SetPosition(1, hitPoint.point);
                 circleQuad.transform.position = hitPoint.point + hitPoint.normal.normalized;
                 circleQuad.transform.rotation = Quaternion.Euler(90, 0, 0);
@@ -82,10 +100,10 @@ public class Playershooter : MonoBehaviour
             else
             {
                 circleQuad.transform.position = hitPoint.point + hitPoint.normal.normalized;
-                circleQuad.transform.rotation = Quaternion.Euler(90,0,0);
+                circleQuad.transform.rotation = Quaternion.Euler(90, 0, 0);
                 lr.SetPosition(1, posin.position + posin.right * maxDistance);
             }
-        } 
+        }
         else
         {
             lr.SetPosition(1, posin.position + posin.right * maxDistance);
@@ -93,20 +111,20 @@ public class Playershooter : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-           
+
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            
+
             // nowPower += MaxPower * Mathf.Sin(Time.time * speed);
             // PowerGage.value = nowPower;
             nowPower = Mathf.Clamp(MaxPower * (Mathf.Cos(Time.time * gageSpeed)), 0, 100);
             PowerGage.value = nowPower;
             anim.SetBool("Shooting", true);
-            
-        } 
+
+        }
         if (Input.GetKeyUp(KeyCode.Space))
-        {    
+        {
             GameObject ball = Instantiate(whiteball, posin.position, Quaternion.Euler(Vector3.zero));
             ball.GetComponent<BallStart>().startVelocity = new Vector3(x, 0, z);
             PowerGage.value = PowerGage.minValue;
@@ -122,11 +140,11 @@ public class Playershooter : MonoBehaviour
 
     IEnumerator powerCorutain()
     {
-        if(PowerGage.value >= 1)
+        if (PowerGage.value >= 1)
         {
             PowerGage.value = PowerGage.value = Mathf.Lerp(PowerGage.maxValue, PowerGage.value, PowerGage.minValue);
         }
-        else if(PowerGage.value ==100)
+        else if (PowerGage.value == 100)
         {
             PowerGage.value = PowerGage.value = Mathf.Lerp(PowerGage.minValue, PowerGage.value, PowerGage.maxValue);
         }
