@@ -161,6 +161,14 @@ public class LoobyBtnManager : MonoBehaviour
     }
 
 
+    public void characterChangeBtn()
+    {
+
+    }
+    public void characterChange()
+    {
+
+    }
 
     void StageClearData()
     {

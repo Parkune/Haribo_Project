@@ -14,7 +14,7 @@ public class Playershooter : MonoBehaviour
 
     //파워게이지를 제어하는 함수
     public float nowPower = 1;
-    public float MaxPower = 100;
+    public float MaxPower = 30f;
     public float gageSpeed = 30f;
     public Slider PowerGage;
 
@@ -97,10 +97,11 @@ public class Playershooter : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            
+
             // nowPower += MaxPower * Mathf.Sin(Time.time * speed);
             // PowerGage.value = nowPower;
-            nowPower = Mathf.Clamp(MaxPower * (Mathf.Cos(Time.time * gageSpeed)), 0, 100);
+            nowPower += Time.deltaTime*10;
+            nowPower = Mathf.Clamp(nowPower, 0, 30);
             PowerGage.value = nowPower;
             anim.SetBool("Shooting", true);
             
