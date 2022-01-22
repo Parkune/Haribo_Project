@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class LoobyBtnManager : MonoBehaviour
 {
@@ -160,13 +161,65 @@ public class LoobyBtnManager : MonoBehaviour
         stageBtn[i].GetComponent<Button>().colors = cor;
     }
 
-
-    public void characterChangeBtn()
+    public GameObject likeBtn;
+    public GameObject characterBtn;
+    public GameObject optionBtn;
+    public GameObject exitBtn;
+    public void LoobyUIControoler()
+    {
+        GameObject selectLoobyUIBtn = EventSystem.current.currentSelectedGameObject;
+        print(selectLoobyUIBtn.name);
+        int selectNum = selectLoobyUIBtn.GetComponent<OptionUISelectNum>().selectUInum;
+        print(selectNum);
+        if (selectNum == 2)
+        {
+            likeBtn.SetActive(true);
+            characterBtn.SetActive(true);
+        }
+        if (selectNum == 3)
+        {
+            likeBtn.SetActive(true);
+            optionBtn.SetActive(true);
+        }
+        if (selectNum == 4)
+        {
+            likeBtn.SetActive(true);
+            exitBtn.SetActive(true);
+        }
+    }
+    public GameObject[] characterList;
+    
+    public void characterChangeBtn(int i)
     {
 
     }
     public void characterChange()
     {
+        GameObject selectCharacterBtn = EventSystem.current.currentSelectedGameObject;
+        int selectNum = selectCharacterBtn.GetComponent<CharacterSelectNum>().characterBtnNum;
+        if(selectNum == 1)
+        {
+
+        }
+        if (selectNum == 2)
+        {
+
+        }
+        if (selectNum == 3)
+        {
+
+        }
+        if (selectNum == 4)
+        {
+
+        }
+    }
+    public void UIexitBtn()
+    {
+        likeBtn.SetActive(false);
+        characterBtn.SetActive(false);
+        optionBtn.SetActive(false);
+        exitBtn.SetActive(false);
 
     }
 
