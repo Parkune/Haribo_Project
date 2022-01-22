@@ -9,10 +9,9 @@ public class GameData
     //0 켜짐 상태,1 음소거 상태
     public int BGMSound = 0;
     public int EffectSound = 0;
-
     // 각챕터의 잠금여부
-    public bool isClear1_1 = true;
-    public bool isClear1_2 = true;
+    public bool isClear1_1;
+    public bool isClear1_2;
     public bool isClear1_3;
     public bool isClear1_4;
     public bool isClear1_5;
@@ -36,5 +35,4 @@ public class GameData
     public bool isClear5_3;
     public bool isClear5_4;
     public bool isClear5_5;
-
 }

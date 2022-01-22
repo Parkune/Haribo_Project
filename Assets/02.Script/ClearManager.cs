@@ -15,18 +15,20 @@ public class ClearManager : MonoBehaviour
     void Start()
     {
         ClearPanel.SetActive(false);
-        findEnemy();
+        Invoke("findEnemy", 0.8f);
+
+    }
+    void findEnemy()
+    {
+        enemys = GameObject.FindGameObjectsWithTag("ENEMY");
         for (int i = 0; i < enemys.Length; i++)
         {
             enemyList.Add(enemys[i]);
         }
     }
-    void findEnemy()
-    {
-        enemys = GameObject.FindGameObjectsWithTag("ENEMY");
-    }
     public void enemyDie(string enemyName)
     {
+        int selectStageNum = GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().StagrNum;
         //에너미가 죽으면 리스트의 오브젝트들을 비교한다.
         for (int i = 0; i < enemys.Length; i++)
         {
@@ -38,9 +40,10 @@ public class ClearManager : MonoBehaviour
                 if (enemyList.Count == 0)
                 {
                     print("게임종료");
-                    Time.timeScale = 0.01f;
+                    Time.timeScale = 0.0001f;
                     ClearPanel.SetActive(true);
-                    
+                    stageClear(selectStageNum);
+                    DataController.Instance.SaveGameData();
                 }
                 Invoke("findEnemy", 0.9f);
                 return;
@@ -51,6 +54,112 @@ public class ClearManager : MonoBehaviour
         //내 이름과 리스트에 담긴 이름이 같다면 리스트에서 제거한다.
 
         //if 리스트의 카운트가 0이 되면 클리어를 프린트한다.
+    }
+
+
+    public void stageClear(int selectStageNum)
+    {
+       
+        if (selectStageNum == 0)
+        {
+            DataController.Instance._gameData.isClear1_1 = true;
+        }
+        if (selectStageNum == 1)
+        {
+            DataController.Instance._gameData.isClear1_2 = true;
+        }
+        if (selectStageNum == 2)
+        {
+            DataController.Instance._gameData.isClear1_3 = true;
+        }
+        if (selectStageNum == 3)
+        {
+            DataController.Instance._gameData.isClear1_4 = true;
+        }
+        if (selectStageNum == 5)
+        {
+            DataController.Instance._gameData.isClear1_5 = true;
+        }
+        if (selectStageNum == 6)
+        {
+            DataController.Instance._gameData.isClear2_1 = true;
+        }
+        if (selectStageNum == 7)
+        {
+            DataController.Instance._gameData.isClear2_2 = true;
+        }
+        if (selectStageNum == 8)
+        {
+            DataController.Instance._gameData.isClear2_3 = true;
+        }
+        if (selectStageNum == 9)
+        {
+            DataController.Instance._gameData.isClear2_4 = true;
+        }
+        if (selectStageNum == 10)
+        {
+            DataController.Instance._gameData.isClear2_5 = true;
+        }
+        if (selectStageNum == 11)
+        {
+            DataController.Instance._gameData.isClear3_1 = true;
+        }
+        if (selectStageNum == 12)
+        {
+            DataController.Instance._gameData.isClear3_2 = true;
+        }
+        if (selectStageNum == 13)
+        {
+            DataController.Instance._gameData.isClear3_3 = true;
+        }
+        if (selectStageNum == 14)
+        {
+            DataController.Instance._gameData.isClear3_4 = true;
+        }
+        if (selectStageNum == 15)
+        {
+            DataController.Instance._gameData.isClear3_5 = true;
+        }
+        if (selectStageNum == 16)
+        {
+            DataController.Instance._gameData.isClear4_1 = true;
+        }
+        if (selectStageNum == 17)
+        {
+            DataController.Instance._gameData.isClear4_2 = true;
+        }
+        if (selectStageNum == 18)
+        {
+            DataController.Instance._gameData.isClear4_3 = true;
+        }
+        if (selectStageNum == 19)
+        {
+            DataController.Instance._gameData.isClear4_4 = true;
+        }
+        if (selectStageNum == 20)
+        {
+            DataController.Instance._gameData.isClear4_5 = true;
+        }
+        if (selectStageNum == 21)
+        {
+            DataController.Instance._gameData.isClear5_1 = true;
+        }
+        if (selectStageNum == 22)
+        {
+            DataController.Instance._gameData.isClear5_2 = true;
+        }
+        if (selectStageNum == 23)
+        {
+            DataController.Instance._gameData.isClear5_3 = true;
+        }
+        if (selectStageNum == 24)
+        {
+            DataController.Instance._gameData.isClear5_4 = true;
+        }
+        if (selectStageNum == 25)
+        {
+            DataController.Instance._gameData.isClear5_5 = true;
+        }
     }
     // Update is called once per frame
     void Update()

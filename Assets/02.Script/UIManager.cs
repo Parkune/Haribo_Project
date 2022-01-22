@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -52,6 +53,10 @@ public class UIManager : MonoBehaviour
         displayBall.text = displayBallCount.ToString();
     }
 
+    public void returnLooby()
+    {
+        SceneManager.LoadScene("LOBBY");
+    }
 
     // Update is called once per frame
     void Update()

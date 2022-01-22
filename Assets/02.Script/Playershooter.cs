@@ -47,7 +47,6 @@ public class Playershooter : MonoBehaviour
    
         lr = posin.GetComponent<LineRenderer>();
         anim = GetComponentInChildren<Animator>();
-        
     }
 
    
