@@ -174,53 +174,50 @@ public class LoobyBtnManager : MonoBehaviour
         if (selectNum == 2)
         {
             likeBtn.SetActive(true);
-            characterBtn.SetActive(true);
+            UIexitBtn(characterBtn);
         }
         if (selectNum == 3)
         {
             likeBtn.SetActive(true);
-            optionBtn.SetActive(true);
+            UIexitBtn(optionBtn);
         }
         if (selectNum == 4)
         {
             likeBtn.SetActive(true);
-            exitBtn.SetActive(true);
+            UIexitBtn(exitBtn);
         }
     }
     public GameObject[] characterList;
     
     public void characterChangeBtn(int i)
     {
-
+        characterList[0].SetActive(false);
+        characterList[1].SetActive(false);
+        characterList[2].SetActive(false);
+        characterList[3].SetActive(false);
+        characterList[i].SetActive(true);
     }
+    public int characterSelectNum;
     public void characterChange()
     {
         GameObject selectCharacterBtn = EventSystem.current.currentSelectedGameObject;
-        int selectNum = selectCharacterBtn.GetComponent<CharacterSelectNum>().characterBtnNum;
-        if(selectNum == 1)
-        {
-
-        }
-        if (selectNum == 2)
-        {
-
-        }
-        if (selectNum == 3)
-        {
-
-        }
-        if (selectNum == 4)
-        {
-
-        }
+        characterSelectNum = selectCharacterBtn.GetComponent<CharacterSelectNum>().characterBtnNum;
+        characterChangeBtn(characterSelectNum);
+        GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().characterNum = characterSelectNum;
     }
-    public void UIexitBtn()
+    public void UIexitBtn(GameObject Panel)
     {
-        likeBtn.SetActive(false);
         characterBtn.SetActive(false);
         optionBtn.SetActive(false);
         exitBtn.SetActive(false);
-
+        Panel.SetActive(true);
+    }
+    public void ReturnLobby()
+    {
+        characterBtn.SetActive(false);
+        optionBtn.SetActive(false);
+        exitBtn.SetActive(false);
+        likeBtn.SetActive(false);
     }
 
     void StageClearData()

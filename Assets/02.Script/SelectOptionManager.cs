@@ -9,6 +9,7 @@ public class SelectOptionManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public int StagrNum;
+    public int characterNum = 0;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -23,5 +24,9 @@ public class SelectOptionManager : MonoBehaviour
         {
             SceneManager.LoadScene("01Stage_Test");
         }
+    }
+    public void selectCharacter()
+    {
+
     }
 }
