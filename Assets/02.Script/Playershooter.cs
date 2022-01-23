@@ -76,30 +76,30 @@ public class Playershooter : MonoBehaviour
             if (hitPoint.transform.CompareTag("WALL"))
             {
                 lr.SetPosition(1, hitPoint.point);
-                circleQuad.transform.position = hitPoint.point + hitPoint.normal.normalized;
+                circleQuad.transform.position = hitPoint.point/* + hitPoint.normal.normalized*/;
                 circleQuad.transform.rotation = Quaternion.Euler(90, 0, 0);
             }
             else if (hitPoint.transform.CompareTag("JELLY"))
             {
                 lr.SetPosition(1, hitPoint.point);
-                circleQuad.transform.position = hitPoint.point + hitPoint.normal.normalized;
+                circleQuad.transform.position = hitPoint.point/* + hitPoint.normal.normalized*/;
                 circleQuad.transform.rotation = Quaternion.Euler(90, 0, 0);
             }
             else if (hitPoint.transform.CompareTag("ENEMY"))
             {
                 lr.SetPosition(1, hitPoint.point);
-                circleQuad.transform.position = hitPoint.point + hitPoint.normal.normalized;
+                circleQuad.transform.position = hitPoint.point/* + hitPoint.normal.normalized*/;
                 circleQuad.transform.rotation = Quaternion.Euler(90, 0, 0);
             }
             else if (hitPoint.transform.CompareTag("CUBE"))
             {
                 lr.SetPosition(1, hitPoint.point);
-                circleQuad.transform.position = hitPoint.point + hitPoint.normal.normalized;
+                circleQuad.transform.position = hitPoint.point/* + hitPoint.normal.normalized*/;
                 circleQuad.transform.rotation = Quaternion.Euler(90, 0, 0);
             }
             else
             {
-                circleQuad.transform.position = hitPoint.point + hitPoint.normal.normalized;
+                circleQuad.transform.position = hitPoint.point/* + hitPoint.normal.normalized*/;
                 circleQuad.transform.rotation = Quaternion.Euler(90, 0, 0);
                 lr.SetPosition(1, posin.position + posin.right * maxDistance);
             }
