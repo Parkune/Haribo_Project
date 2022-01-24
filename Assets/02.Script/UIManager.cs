@@ -44,10 +44,28 @@ public class UIManager : MonoBehaviour
         int a = displayBallCount;
         displayBallCT();
         timebtnoff.SetActive(false);
+        stopMenuUI.SetActive(false);
         print(a);
         
     }
 
+    public void ReturnGame()
+    {
+        Time.timeScale = 1f;
+        stopMenuUI.SetActive(false);
+    }
+
+    public void returnMenu()
+    {
+        SceneManager.LoadScene("LOOBY");
+    }
+
+    public GameObject stopMenuUI;
+    public void stopButton()
+    {
+        Time.timeScale = 0f;
+        stopMenuUI.SetActive(true);
+    } 
     public void displayBallCT()
     {
         displayBall.text = displayBallCount.ToString();

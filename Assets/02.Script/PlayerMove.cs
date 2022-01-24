@@ -33,7 +33,7 @@ public class PlayerMove : MonoBehaviour
 
         
         zPosition += Input.GetAxisRaw("Horizontal") * Time.deltaTime * moveSpeed;
-        zPosition =  Mathf.Clamp(zPosition, 1, 7);
+        zPosition =  Mathf.Clamp(zPosition, -2.5f, 2.5f);
         transform.position = new Vector3(zPosition, this.gameObject.transform.position.y, transform.position.z);
     }
     //회전을 다른 방식으로 제어한다.

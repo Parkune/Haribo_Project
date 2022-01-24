@@ -119,8 +119,8 @@ public class Playershooter : MonoBehaviour
 
             // nowPower += MaxPower * Mathf.Sin(Time.time * speed);
             // PowerGage.value = nowPower;
-            nowPower += Time.deltaTime * 10;
-            nowPower = Mathf.Clamp(nowPower, 0, 30);
+            nowPower += Time.deltaTime * 20;
+            nowPower = Mathf.Clamp(nowPower, 0, 40);
             PowerGage.value = nowPower;
             anim.SetBool("Shooting", true);
 
@@ -133,6 +133,7 @@ public class Playershooter : MonoBehaviour
             ballLimit -= 1;
             uiManager.displayBallCT();
             turn = false;
+            PowerGage.value = 0;
             posin.gameObject.SetActive(false);
             circleQuad.SetActive(false);
             anim.SetBool("Shooting", false);
