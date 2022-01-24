@@ -14,7 +14,7 @@ public class Playershooter : MonoBehaviour
 
     //파워게이지를 제어하는 함수
     public float nowPower = 1;
-    public float MaxPower = 30f;
+    public float MaxPower = 50f;
     public float gageSpeed = 30f;
     public Slider PowerGage;
 
@@ -54,8 +54,8 @@ public class Playershooter : MonoBehaviour
     void Update()
     {
 
-        float z = -PowerGage.value * Mathf.Sin(transform.eulerAngles.y * Mathf.Deg2Rad) / 3f;
-        float x = PowerGage.value * Mathf.Cos(transform.eulerAngles.y * Mathf.Deg2Rad) / 3f;
+        float z = -PowerGage.value * Mathf.Sin(transform.eulerAngles.y * Mathf.Deg2Rad);
+        float x = PowerGage.value * Mathf.Cos(transform.eulerAngles.y * Mathf.Deg2Rad);
         Ray ray;
         RaycastHit hitPoint;
 

@@ -115,9 +115,9 @@ MonoBehaviour:
   startVelocity: {x: 30, y: 0, z: 30}
   velocity: {x: 0, y: 0, z: 0}
   turnManager: {fileID: 0}
+  stageNum: 6
   Copy: 0
   collisionSound: {fileID: 0}
-  stageNum: 6
 --- !u!114 &7629176091804755417
 MonoBehaviour:
   m_ObjectHideFlags: 0
