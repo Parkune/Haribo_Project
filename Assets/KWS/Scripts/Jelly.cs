@@ -6,12 +6,13 @@ public class Jelly : MonoBehaviour
 {
     public GameObject plain;
     public GameObject pain;
+    public ParticleSystem particle;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        particle.Stop();
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class Jelly : MonoBehaviour
         if (collision.gameObject.CompareTag("BALL"))
         {
             pain.SetActive(true);
+            particle.Play();
             plain.SetActive(false);
             StartCoroutine("jellyPain");
         }
