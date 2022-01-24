@@ -10,6 +10,7 @@ public class BallStart : MonoBehaviour
     public Vector3 startVelocity = new Vector3(10f,0, 10f);
     public Vector3 velocity;
     public TurnManager turnManager;
+    public int stageNum =0;
     // Start is called before the first frame update
     
     public bool Copy;
@@ -20,11 +21,12 @@ public class BallStart : MonoBehaviour
     AudioSource audioSource;
 
     StageManager stageManager;
-    public int stageNum;
+    
     private float frictionforce;
     private void Awake()
     {
         stageManager = GameObject.FindGameObjectWithTag("STAGEMANAGER").GetComponent<StageManager>();
+        stageNum = stageManager.selectStageNum;
         stageManager.stageFrictionForce.TryGetValue(stageNum, out frictionforce);
     }
     void Start()

@@ -22,7 +22,7 @@ public class SelectOptionManager : MonoBehaviour
         print(StagrNum);
         if (clickBtn.GetComponent<BtnStageNum>().isClear == true)
         {
-            SceneManager.LoadScene("01Stage_Test");
+            SceneManager.LoadScene("01Stage_Final");
         }
     }
     public void selectCharacter()
