@@ -75,6 +75,7 @@ public class Playershooter : MonoBehaviour
         {
             if (hitPoint.transform.CompareTag("WALL"))
             {
+                //Vector3 newEndPoint = new Vector3(hitPoint.point.x, hitPoint.point.y + 1, hitPoint.point.z - 1);
                 lr.SetPosition(1, hitPoint.point);
                 circleQuad.transform.position = hitPoint.point/* + hitPoint.normal.normalized*/;
                 circleQuad.transform.rotation = Quaternion.Euler(90, 0, 0);
@@ -118,7 +119,7 @@ public class Playershooter : MonoBehaviour
 
             // nowPower += MaxPower * Mathf.Sin(Time.time * speed);
             // PowerGage.value = nowPower;
-            nowPower += Time.deltaTime*10;
+            nowPower += Time.deltaTime * 10;
             nowPower = Mathf.Clamp(nowPower, 0, 30);
             PowerGage.value = nowPower;
             anim.SetBool("Shooting", true);
