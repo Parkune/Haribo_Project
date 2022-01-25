@@ -49,7 +49,7 @@ public class PlayerRotation : MonoBehaviour
             if (Input.touchCount > 0)
             {
                 Vector2 touchPosition = Input.GetTouch(0).position;
-                Vector3 mPosition = new Vector3(touchPosition.x, 0, touchPosition.y);
+                Vector3 mPosition = new Vector3(touchPosition.x, touchPosition.y, 0);
                 Vector3 oPosition = transform.position;
 
                 mPosition.z = oPosition.x - Camera.main.transform.position.x;

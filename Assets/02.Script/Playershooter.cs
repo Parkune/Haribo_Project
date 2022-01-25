@@ -143,7 +143,7 @@ public class Playershooter : MonoBehaviour
         {
             if(Input.touchCount > 0)
             {
-                if(Input.GetTouch(0).phase == TouchPhase.Began)
+                if(Input.GetTouch(0).phase == TouchPhase.Moved)
                 { 
                      nowPower += Time.deltaTime * 20;
                      nowPower = Mathf.Clamp(nowPower, 0, 40);
