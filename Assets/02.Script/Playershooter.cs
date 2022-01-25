@@ -137,8 +137,35 @@ public class Playershooter : MonoBehaviour
             posin.gameObject.SetActive(false);
             circleQuad.SetActive(false);
             anim.SetBool("Shooting", false);
-        }
 
+        }
+        if(Application.platform == RuntimePlatform.Android)
+        {
+            if(Input.touchCount > 0)
+            {
+                if(Input.GetTouch(0).phase == TouchPhase.Began)
+                { 
+                     nowPower += Time.deltaTime * 20;
+                     nowPower = Mathf.Clamp(nowPower, 0, 40);
+                     PowerGage.value = nowPower;
+                     anim.SetBool("Shooting", true);
+                }
+                if(Input.GetTouch(0).phase == TouchPhase.Ended)
+                {
+                    GameObject ball = Instantiate(whiteball, posin.position, Quaternion.Euler(Vector3.zero));
+                    ball.GetComponent<BallStart>().startVelocity = new Vector3(x, 0, z);
+                    PowerGage.value = PowerGage.minValue;
+                    ballLimit -= 1;
+                    uiManager.displayBallCT();
+                    turn = false;
+                    PowerGage.value = 0;
+                    posin.gameObject.SetActive(false);
+                    circleQuad.SetActive(false);
+                    anim.SetBool("Shooting", false);
+                }
+            }
+            
+        }
     }
 
     IEnumerator powerCorutain()
