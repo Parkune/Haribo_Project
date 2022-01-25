@@ -220,6 +220,34 @@ public class LoobyBtnManager : MonoBehaviour
         likeBtn.SetActive(false);
     }
 
+
+    public Toggle effectSoundToggle;
+    public Toggle soundToggle;
+    public void effectSoundOnToggle()
+    {
+        if(effectSoundToggle.isOn)
+        {
+            GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnEffectSound = true;
+        } else
+        {
+            GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnEffectSound = false;
+        }
+  
+    }
+
+    public void soundOnToggle()
+    {
+        if (soundToggle.isOn)
+        {
+            GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnSound = true;
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnSound = false;
+        }
+        print(GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnSound);
+    }
+
     void StageClearData()
     {
         BtnDic.Add(1, DataController.Instance._gameData.isClear1_1);
@@ -250,10 +278,14 @@ public class LoobyBtnManager : MonoBehaviour
         
     }
 
-
-    // Update is called once per frame
-    void Update()
+    public void extiGame()
     {
-        
+    #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+    #else
+        Application.Quit();
+    #endif
     }
+
+
 }

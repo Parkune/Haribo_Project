@@ -10,6 +10,8 @@ public class SelectOptionManager : MonoBehaviour
     // Start is called before the first frame update
     public int StagrNum;
     public int characterNum = 0;
+    public bool isOnSound = true;
+    public bool isOnEffectSound = true;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);

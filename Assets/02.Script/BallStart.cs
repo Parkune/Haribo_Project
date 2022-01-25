@@ -37,6 +37,10 @@ public class BallStart : MonoBehaviour
         turnManager = GameObject.FindGameObjectWithTag("TURNMANAGER").GetComponent<TurnManager>();
         turnManager.playerTurnOff();
         audioSource = this.gameObject.GetComponent<AudioSource>();
+        if(GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnEffectSound == false)
+        {
+            audioSource.volume = 0;
+        }
     }
 
     void TurnOn()

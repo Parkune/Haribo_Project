@@ -401,7 +401,19 @@ MonoBehaviour:
   buttonText: Return
   clickEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1374627874}
+        m_TargetAssemblyTypeName: LoobyBtnManager, Assembly-CSharp
+        m_MethodName: ReturnLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   hoverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -2742,6 +2754,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StagrNum: 0
   characterNum: 0
+  isOnSound: 1
+  isOnEffectSound: 1
 --- !u!4 &279796222
 Transform:
   m_ObjectHideFlags: 0
@@ -11507,7 +11521,19 @@ MonoBehaviour:
   buttonText: EXIT
   clickEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1374627874}
+        m_TargetAssemblyTypeName: LoobyBtnManager, Assembly-CSharp
+        m_MethodName: extiGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   hoverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11799,7 +11825,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1374627874}
+        m_TargetAssemblyTypeName: LoobyBtnManager, Assembly-CSharp
+        m_MethodName: effectSoundOnToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!222 &1241262555
 CanvasRenderer:
@@ -13737,6 +13775,8 @@ MonoBehaviour:
   - {fileID: 919132149109679252}
   - {fileID: 4906127084598766542}
   characterSelectNum: 0
+  effectSoundToggle: {fileID: 1241262554}
+  soundToggle: {fileID: 2085153577}
 --- !u!1 &1379382249
 GameObject:
   m_ObjectHideFlags: 0
@@ -20055,7 +20095,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1374627874}
+        m_TargetAssemblyTypeName: LoobyBtnManager, Assembly-CSharp
+        m_MethodName: soundOnToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!222 &2085153578
 CanvasRenderer:
