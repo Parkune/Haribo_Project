@@ -77,87 +77,87 @@ public class ClearManager : MonoBehaviour
         {
             DataController.Instance._gameData.isClear1_4 = true;
         }
-        if (selectStageNum == 5)
+        if (selectStageNum == 4)
         {
             DataController.Instance._gameData.isClear1_5 = true;
         }
-        if (selectStageNum == 6)
+        if (selectStageNum == 5)
         {
             DataController.Instance._gameData.isClear2_1 = true;
         }
-        if (selectStageNum == 7)
+        if (selectStageNum == 6)
         {
             DataController.Instance._gameData.isClear2_2 = true;
         }
-        if (selectStageNum == 8)
+        if (selectStageNum == 7)
         {
             DataController.Instance._gameData.isClear2_3 = true;
         }
-        if (selectStageNum == 9)
+        if (selectStageNum == 8)
         {
             DataController.Instance._gameData.isClear2_4 = true;
         }
-        if (selectStageNum == 10)
+        if (selectStageNum == 9)
         {
             DataController.Instance._gameData.isClear2_5 = true;
         }
-        if (selectStageNum == 11)
+        if (selectStageNum == 10)
         {
             DataController.Instance._gameData.isClear3_1 = true;
         }
-        if (selectStageNum == 12)
+        if (selectStageNum == 11)
         {
             DataController.Instance._gameData.isClear3_2 = true;
         }
-        if (selectStageNum == 13)
+        if (selectStageNum == 12)
         {
             DataController.Instance._gameData.isClear3_3 = true;
         }
-        if (selectStageNum == 14)
+        if (selectStageNum == 13)
         {
             DataController.Instance._gameData.isClear3_4 = true;
         }
-        if (selectStageNum == 15)
+        if (selectStageNum == 14)
         {
             DataController.Instance._gameData.isClear3_5 = true;
         }
-        if (selectStageNum == 16)
+        if (selectStageNum == 15)
         {
             DataController.Instance._gameData.isClear4_1 = true;
         }
-        if (selectStageNum == 17)
+        if (selectStageNum == 16)
         {
             DataController.Instance._gameData.isClear4_2 = true;
         }
-        if (selectStageNum == 18)
+        if (selectStageNum == 17)
         {
             DataController.Instance._gameData.isClear4_3 = true;
         }
-        if (selectStageNum == 19)
+        if (selectStageNum == 18)
         {
             DataController.Instance._gameData.isClear4_4 = true;
         }
-        if (selectStageNum == 20)
+        if (selectStageNum == 19)
         {
             DataController.Instance._gameData.isClear4_5 = true;
         }
-        if (selectStageNum == 21)
+        if (selectStageNum == 20)
         {
             DataController.Instance._gameData.isClear5_1 = true;
         }
-        if (selectStageNum == 22)
+        if (selectStageNum == 21)
         {
             DataController.Instance._gameData.isClear5_2 = true;
         }
-        if (selectStageNum == 23)
+        if (selectStageNum == 22)
         {
             DataController.Instance._gameData.isClear5_3 = true;
         }
-        if (selectStageNum == 24)
+        if (selectStageNum == 23)
         {
             DataController.Instance._gameData.isClear5_4 = true;
         }
-        if (selectStageNum == 25)
+        if (selectStageNum == 24)
         {
             DataController.Instance._gameData.isClear5_5 = true;
         }

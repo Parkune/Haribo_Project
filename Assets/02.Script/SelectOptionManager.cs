@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SelectOptionManager : MonoBehaviour
 {
+    public static SelectOptionManager instance;
     // Start is called before the first frame update
     public int StagrNum;
     public int characterNum = 0;
@@ -14,6 +15,12 @@ public class SelectOptionManager : MonoBehaviour
     public bool isOnEffectSound = true;
     private void Awake()
     {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
         DontDestroyOnLoad(gameObject);
     }
     public void SelectStageBtn()

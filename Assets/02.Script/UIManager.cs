@@ -75,10 +75,23 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("LOBBY");
     }
-
+    float rotinTime = 0;
     // Update is called once per frame
     void Update()
     {
-        
+        if(displayBallCount == 0)
+        {
+            rotinTime += Time.deltaTime;
+           
+            if(rotinTime > 3f)
+            {
+                print("실행되었다.");
+                if(GameObject.FindGameObjectWithTag("BALL") == null)
+                {
+                    stopButton();
+                }
+                rotinTime = 0;
+            }
+        }
     }
 }

@@ -11,12 +11,17 @@ public class LoobyBtnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
-       // stageBtn = GameObject.FindGameObjectsWithTag("STAGEBUTTON");
-       /* for (int i = 0; i < stageBtn.Length; i++)
-        {
-            stageBtn[i].GetComponent<BtnStageNum>().StageBtn(i);
-        } */
+
+        // stageBtn = GameObject.FindGameObjectsWithTag("STAGEBUTTON");
+        /* for (int i = 0; i < stageBtn.Length; i++)
+         {
+             stageBtn[i].GetComponent<BtnStageNum>().StageBtn(i);
+         } */
+       if (GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnEffectSound == false)
+       { effectSoundToggle.isOn = false; } 
+
+       if(GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnSound == false)
+        { soundToggle.isOn = false; }
         stageClear();
 
     }
