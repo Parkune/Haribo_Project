@@ -113,7 +113,7 @@ public class Playershooter : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-           //PowerGage.value = Mathf.Lerp(0, 40, Time.deltaTime*20);
+            anim.SetTrigger("Shoot");
         }
         if (Input.GetKey(KeyCode.Space))
         {
