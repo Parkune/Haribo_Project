@@ -1166,19 +1166,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 649920477}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 816530033}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: returnLooby
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &649920479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1240,7 +1228,19 @@ MonoBehaviour:
   buttonText: LOBBY
   clickEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 816530033}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: returnLooby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   hoverEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1875,6 +1875,7 @@ MonoBehaviour:
   timebtnon: {fileID: 1547158247}
   timebtnoff: {fileID: 1304736045}
   loobyBtn: {fileID: 0}
+  stopMenuUI: {fileID: 0}
 --- !u!4 &816530034
 Transform:
   m_ObjectHideFlags: 0
@@ -4899,9 +4900,9 @@ MonoBehaviour:
   startVelocity: {x: 30, y: 0, z: 30}
   velocity: {x: 0, y: 0, z: 0}
   turnManager: {fileID: 0}
+  stageNum: 0
   Copy: 0
   collisionSound: {fileID: 0}
-  stageNum: 0
 --- !u!1 &8712848822797136348
 GameObject:
   m_ObjectHideFlags: 0

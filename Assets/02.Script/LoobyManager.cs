@@ -9,6 +9,7 @@ public class LoobyManager : MonoBehaviour
     void Start()
     {
         DataController.Instance.LoadGameData();
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame

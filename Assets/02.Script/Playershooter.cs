@@ -149,6 +149,15 @@ public class Playershooter : MonoBehaviour
 
     public void PowerCharge()
     {
+        if (turn == false)
+        {
+            return;
+        }
+        if (ballLimit == 0)
+        {
+            return;
+        }
+
                      nowPower += Time.deltaTime * 20;
                      nowPower = Mathf.Clamp(nowPower, 0, 40);
                      PowerGage.value = nowPower;
@@ -156,6 +165,14 @@ public class Playershooter : MonoBehaviour
     }
     public void Shooting()
     {
+        if (turn == false)
+        {
+            return;
+        }
+        if (ballLimit == 0)
+        {
+            return;
+        }
                     float z = -PowerGage.value * Mathf.Sin(transform.eulerAngles.y * Mathf.Deg2Rad);
                     float x = PowerGage.value * Mathf.Cos(transform.eulerAngles.y * Mathf.Deg2Rad);
                     GameObject ball = Instantiate(whiteball, posin.position, Quaternion.Euler(Vector3.zero));

@@ -8,7 +8,6 @@ public class StageManager : MonoBehaviour
 
     public Dictionary<int, int> Ballct = new Dictionary<int, int>();
     public Dictionary<int, float> stageFrictionForce = new Dictionary<int, float>();
-    public List<GameObject> stageList = new List<GameObject>();
     public  GameObject[] stage;
     public Transform spwanPosition;
 

@@ -43,6 +43,7 @@ public class ClearManager : MonoBehaviour
                     Time.timeScale = 0.0001f;
                     ClearPanel.SetActive(true);
                     stageClear(selectStageNum);
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<Playershooter>().turn =false;
                     DataController.Instance.SaveGameData();
                 }
                 Invoke("findEnemy", 0.9f);
