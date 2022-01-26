@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -112,13 +113,16 @@ public class Playershooter : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+           //PowerGage.value = Mathf.Lerp(0, 40, Time.deltaTime*20);
         }
         if (Input.GetKey(KeyCode.Space))
         {
 
+            
+
             // nowPower += MaxPower * Mathf.Sin(Time.time * speed);
-            // PowerGage.value = nowPower;
+           // StopCoroutine("powerCorutain");
+           
             nowPower += Time.deltaTime * 20;
             nowPower = Mathf.Clamp(nowPower, 0, 40);
             PowerGage.value = nowPower;
@@ -127,6 +131,7 @@ public class Playershooter : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
+
             GameObject ball = Instantiate(whiteball, posin.position, Quaternion.Euler(Vector3.zero));
             ball.GetComponent<BallStart>().startVelocity = new Vector3(x, 0, z);
             PowerGage.value = PowerGage.minValue;
@@ -139,19 +144,20 @@ public class Playershooter : MonoBehaviour
             anim.SetBool("Shooting", false);
 
         }
-        if(Application.platform == RuntimePlatform.Android)
-        {
-            if(Input.touchCount > 0)
-            {
-                if(Input.GetTouch(0).phase == TouchPhase.Moved)
-                { 
+
+    }
+
+    public void PowerCharge()
+    {
                      nowPower += Time.deltaTime * 20;
                      nowPower = Mathf.Clamp(nowPower, 0, 40);
                      PowerGage.value = nowPower;
                      anim.SetBool("Shooting", true);
-                }
-                if(Input.GetTouch(0).phase == TouchPhase.Ended)
-                {
+    }
+    public void Shooting()
+    {
+                    float z = -PowerGage.value * Mathf.Sin(transform.eulerAngles.y * Mathf.Deg2Rad);
+                    float x = PowerGage.value * Mathf.Cos(transform.eulerAngles.y * Mathf.Deg2Rad);
                     GameObject ball = Instantiate(whiteball, posin.position, Quaternion.Euler(Vector3.zero));
                     ball.GetComponent<BallStart>().startVelocity = new Vector3(x, 0, z);
                     PowerGage.value = PowerGage.minValue;
@@ -162,26 +168,16 @@ public class Playershooter : MonoBehaviour
                     posin.gameObject.SetActive(false);
                     circleQuad.SetActive(false);
                     anim.SetBool("Shooting", false);
-                }
-            }
-            
-        }
     }
+
+
+
 
     IEnumerator powerCorutain()
     {
-        if (PowerGage.value >= 1)
-        {
-            PowerGage.value = PowerGage.value = Mathf.Lerp(PowerGage.maxValue, PowerGage.value, PowerGage.minValue);
-        }
-        else if (PowerGage.value == 100)
-        {
-            PowerGage.value = PowerGage.value = Mathf.Lerp(PowerGage.minValue, PowerGage.value, PowerGage.maxValue);
-        }
 
-        PowerGage.value = Mathf.Lerp(PowerGage.minValue, PowerGage.value, PowerGage.maxValue);
-        print(PowerGage.value);
-        yield return new WaitForSeconds(0.2f);
+
+        yield return null;
     }
 
 

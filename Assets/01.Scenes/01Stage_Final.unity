@@ -5948,6 +5948,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1049959545}
     m_Modifications:
+    - target: {fileID: 114088700782461480, guid: cc43aa00848c8bc40b7ee6ded0722cdb, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114088700782461480, guid: cc43aa00848c8bc40b7ee6ded0722cdb, type: 3}
+      propertyPath: m_MaxValue
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 114440933025189880, guid: cc43aa00848c8bc40b7ee6ded0722cdb, type: 3}
       propertyPath: m_havePropertiesChanged
       value: 1

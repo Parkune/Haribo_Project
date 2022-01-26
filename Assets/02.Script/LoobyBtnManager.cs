@@ -12,11 +12,11 @@ public class LoobyBtnManager : MonoBehaviour
     void Start()
     {
        
-        stageBtn = GameObject.FindGameObjectsWithTag("STAGEBUTTON");
-        for (int i = 0; i < stageBtn.Length; i++)
+       // stageBtn = GameObject.FindGameObjectsWithTag("STAGEBUTTON");
+       /* for (int i = 0; i < stageBtn.Length; i++)
         {
             stageBtn[i].GetComponent<BtnStageNum>().StageBtn(i);
-        }
+        } */
         stageClear();
 
     }
