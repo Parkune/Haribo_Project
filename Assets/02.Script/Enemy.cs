@@ -20,14 +20,19 @@ public class Enemy : MonoBehaviour, IenemyStatus
         if(enemyNum == 1)
         {
             enemyName = "apple";
-            enemyHealth = 3;
-            enemyResist = 0.3f;
+            enemyHealth = 1;
+            enemyResist = 0.1f;
         } 
         else if(enemyNum == 2)
         {
             enemyName = "mellon";
-            enemyHealth = 5;
-            enemyResist =  0.8f;
+            enemyHealth = 2;
+            enemyResist =  0.3f;
+        } else if(enemyNum == 3)
+        {
+            enemyName = "orange";
+            enemyHealth = 3;
+            enemyResist = 0.4f;
         }
     }
     public void Damage(float damage)
@@ -38,7 +43,7 @@ public class Enemy : MonoBehaviour, IenemyStatus
        {
             stageManager.GetComponent<ClearManager>().enemyDie(this.gameObject.name);
             print(this.gameObject.name);
-           Destroy(this.gameObject, 0.8f);
+           Destroy(this.gameObject, 0.5f);
        }
     }
     public void Resist(float resist)
