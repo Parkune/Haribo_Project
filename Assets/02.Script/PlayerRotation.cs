@@ -1,28 +1,60 @@
+using System.Security.Cryptography.X509Certificates;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 
 public class PlayerRotation : MonoBehaviour
 {
+    public float zPosition;
+    public bool Left,Right;
+    public float moveSpeed = 10f;
+    public Vector3 ClampPosition(Vector3 position)
+    {
+        return new Vector3
+        (
+        Mathf.Clamp(position.x, -2.5f, 2.5f) , this.transform.position.y, this.transform.position.z
+        );
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        Transform tr = this.gameObject.transform;
+        zPosition = tr.transform.position.x;
     }
 
     // Update is called once per frame
     void Update()
     {
 #if UNITY_EDITOR
+     
+     
         UpdateForUnityEditor();
+
+        
+        //zPosition += Input.GetAxisRaw("Horizontal") * Time.deltaTime * moveSpeed;
+        //zPosition =  Mathf.Clamp(zPosition, -2.5f, 2.5f);
+    //    transform.position = new Vector3(zPosition, this.gameObject.transform.position.y, transform.position.z);
+
+        toMove();
+
 #else
+
         UpdateForAndroid();
+        toMove();
+
 #endif
     }
 
     void UpdateForUnityEditor()
     {
+        if(EventSystem.current.IsPointerOverGameObject())
+	    {  
+        return;
+	         //클릭 처리
+	    }
         //먼저 계산을 위해 마우스와 게임 오브젝트의 현재의 좌표를 임시로 저장합니다.
         Vector3 mPosition = Input.mousePosition; //마우스 좌표 저장
         Vector3 oPosition = transform.position; //게임 오브젝트 좌표 저장
@@ -54,10 +86,52 @@ public class PlayerRotation : MonoBehaviour
 
     }
 
+    public void toMove()
+    {
+        transform.localPosition = ClampPosition(transform.localPosition);
+       
+        if(Right)
+        {
+             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+        }
+        if(Left)
+        {
+             transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+        }
+
+    }
+
+    public void pressRightUp()
+    {
+        Right = false;
+    }
+        public void pressRightDown()
+    {
+        Right = true;
+    }
+        public void pressLeftUp()
+    {
+        Left = false;
+    }
+    public void pressLeftDown()
+    {
+        Left = true;
+    }
+
+    public void pressNomal()
+    {
+        transform.Translate(Vector3.zero);
+    }
+
 bool isTouchDrag;
     Vector2 myTouchPos;
     void UpdateForAndroid()
     {
+        if(EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+	    {  
+        return;
+	         //클릭 처리
+	    }
         if (isTouchDrag)
         {
             Touch touch = Input.GetTouch(0);
