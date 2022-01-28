@@ -113,6 +113,8 @@ public class Playershooter : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            nowPower = 0f;
+            PowerGage.value = 0;
             anim.SetTrigger("Shoot");
         }
         if (Input.GetKey(KeyCode.Space))
@@ -122,7 +124,7 @@ public class Playershooter : MonoBehaviour
 
             // nowPower += MaxPower * Mathf.Sin(Time.time * speed);
            // StopCoroutine("powerCorutain");
-           
+            
             nowPower += Time.deltaTime * 20;
             nowPower = Mathf.Clamp(nowPower, 0, 40);
             PowerGage.value = nowPower;
@@ -147,6 +149,11 @@ public class Playershooter : MonoBehaviour
 
     }
 
+    public void powerLimit()
+    {
+        PowerGage.value = 0;
+    }
+
     public void PowerCharge()
     {
         if (turn == false)
@@ -157,7 +164,7 @@ public class Playershooter : MonoBehaviour
         {
             return;
         }
-
+                     
                      nowPower += Time.deltaTime * 20;
                      nowPower = Mathf.Clamp(nowPower, 0, 40);
                      PowerGage.value = nowPower;
@@ -182,6 +189,7 @@ public class Playershooter : MonoBehaviour
                     uiManager.displayBallCT();
                     turn = false;
                     PowerGage.value = 0;
+                    nowPower = 0f;
                     posin.gameObject.SetActive(false);
                     circleQuad.SetActive(false);
                     anim.SetBool("Shooting", false);

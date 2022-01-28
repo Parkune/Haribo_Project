@@ -23,6 +23,8 @@ public class PlayerRotation : MonoBehaviour
     {
         Transform tr = this.gameObject.transform;
         zPosition = tr.transform.position.x;
+        Left = false;
+        Right = false;
     }
 
     // Update is called once per frame
@@ -41,9 +43,13 @@ public class PlayerRotation : MonoBehaviour
         toMove();
 
 #else
-
-        UpdateForAndroid();
         toMove();
+          if(EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
+	      {  
+             return;
+	      }
+          UpdateForAndroid();
+        
 
 #endif
     }
@@ -103,37 +109,42 @@ public class PlayerRotation : MonoBehaviour
 
     public void pressRightUp()
     {
+        Invoke("toRight", 0.1f);
+        print(Left + "라이트펄스");
+    }
+    void toRight()
+    {
         Right = false;
     }
         public void pressRightDown()
     {
         Right = true;
+        print(Left + "라이트트루");
     }
         public void pressLeftUp()
+    {
+        Invoke("toLeft", 0.05f);
+        print(Left + "레프트펄스");
+    }
+    void toLeft()
     {
         Left = false;
     }
     public void pressLeftDown()
     {
         Left = true;
+        print(Left + "레프트 트루");
     }
 
-    public void pressNomal()
-    {
-        transform.Translate(Vector3.zero);
-    }
 
 bool isTouchDrag;
     Vector2 myTouchPos;
     void UpdateForAndroid()
     {
-        if(EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
-	    {  
-        return;
-	         //클릭 처리
-	    }
-        if (isTouchDrag)
-        {
+
+
+            if (isTouchDrag)
+            {
             Touch touch = Input.GetTouch(0);
                 RaycastHit hitInfo;
 
@@ -141,35 +152,42 @@ bool isTouchDrag;
 
                 if(Physics.Raycast(ray, out hitInfo, 500f))
                 {
-                    Vector3 playerToMouse = hitInfo.point - this.transform.position;
-                    playerToMouse.y = 0;
-                    playerToMouse.Normalize();
+                    if (hitInfo.collider.gameObject.CompareTag("STAGE"))
+                    {
+                        Vector3 playerToMouse = hitInfo.point - this.transform.position;
+                        playerToMouse.y = 0;
+                        playerToMouse.Normalize();
 
-                    transform.right = playerToMouse;
+                        transform.right = playerToMouse;
+                    }
                 }
-        }
-
-        if (Input.touchCount >  0)
-        {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Began)
-            {
-                isTouchDrag = true;
-                this.gameObject.GetComponent<Playershooter>().PowerCharge();
-            }else if(touch.phase == TouchPhase.Moved)
-            {
-                this.gameObject.GetComponent<Playershooter>().PowerCharge();
-            }else if(touch.phase == TouchPhase.Stationary)
-            {
-               this.gameObject.GetComponent<Playershooter>().PowerCharge();
             }
-            else if (touch.phase == TouchPhase.Ended)
-            {
-                isTouchDrag = false;
-                this.gameObject.GetComponent<Playershooter>().Shooting();
 
+            if(Left == false && Right == false)
+            { 
+                if (Input.touchCount > 0)
+                {
+                    Touch touch = Input.GetTouch(0);
+
+                    if (touch.phase == TouchPhase.Began)
+                    {
+                        isTouchDrag = true;
+                        this.gameObject.GetComponent<Playershooter>().powerLimit();
+                    }
+                    else if (touch.phase == TouchPhase.Moved)
+                    {
+                        this.gameObject.GetComponent<Playershooter>().PowerCharge();
+                    }
+                    else if (touch.phase == TouchPhase.Stationary)
+                    {
+                        this.gameObject.GetComponent<Playershooter>().PowerCharge();
+                    }
+                    else if (touch.phase == TouchPhase.Ended)
+                    {
+                        isTouchDrag = false;
+                        this.gameObject.GetComponent<Playershooter>().Shooting();
+                    }
+                }
             }
-        }
     }
 }
