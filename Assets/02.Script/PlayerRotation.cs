@@ -23,8 +23,7 @@ public class PlayerRotation : MonoBehaviour
     {
         Transform tr = this.gameObject.transform;
         zPosition = tr.transform.position.x;
-        Left = false;
-        Right = false;
+        toAction = false;
     }
 
     // Update is called once per frame
@@ -109,7 +108,7 @@ public class PlayerRotation : MonoBehaviour
 
     public void pressRightUp()
     {
-        Invoke("toRight", 0.1f);
+        Invoke("toRight", 0.05f);
         print(Left + "¶óÀÌÆ®ÆÞ½º");
     }
     void toRight()
@@ -139,6 +138,7 @@ public class PlayerRotation : MonoBehaviour
 
 bool isTouchDrag;
     Vector2 myTouchPos;
+   public bool toAction;
     void UpdateForAndroid()
     {
 
@@ -163,7 +163,7 @@ bool isTouchDrag;
                 }
             }
 
-            if(Left == false && Right == false)
+            if(toAction == false && Right == false && Left ==false)
             { 
                 if (Input.touchCount > 0)
                 {

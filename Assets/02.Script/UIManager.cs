@@ -27,20 +27,33 @@ public class UIManager : MonoBehaviour
     public void TimebtnOn()
     {
         timebtnon.SetActive(false);
+        rotationScript.toAction = true;
         Time.timeScale = 2f;
         timebtnoff.SetActive(true);
+        Invoke("toActions", 0.001f);
     }
+    public void toActions()
+    {
+        rotationScript.toAction = false;
+    }
+
     public void TimebtnOff()
     {
         timebtnon.SetActive(true);
         Time.timeScale = 1f;
+        rotationScript.toAction = true;
         timebtnoff.SetActive(false);
+        Invoke("toActions", 0.01f);
     }
 
+    public GameObject player;
+    public PlayerRotation rotationScript;
 
     void Start()
     {
-        shooterScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Playershooter>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        shooterScript = player.GetComponent<Playershooter>();
+        rotationScript = player.GetComponent<PlayerRotation>();
         int a = displayBallCount;
         displayBallCT();
         timebtnoff.SetActive(false);
@@ -53,6 +66,7 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         stopMenuUI.SetActive(false);
+        Invoke("toActions", 0.05f);
     }
 
     public void returnMenu()
@@ -65,6 +79,7 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         stopMenuUI.SetActive(true);
+        rotationScript.toAction = true;
     } 
     public void displayBallCT()
     {
