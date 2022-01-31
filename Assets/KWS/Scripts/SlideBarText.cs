@@ -50,6 +50,6 @@ public class SlideBarText : MonoBehaviour
             max.SetActive(false);
 
         }
-        print(value);
+        //print(value);
     }
 }

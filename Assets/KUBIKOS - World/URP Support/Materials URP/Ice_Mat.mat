@@ -10,7 +10,7 @@ Material:
   m_Name: Ice_Mat
   m_Shader: {fileID: 4800000, guid: 857b14a1defb53845a485c78316ab2e9, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 5
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -56,6 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _AlphaCutoff: 0.5
     - _Float0: 0
     - _ScatteringPower: 1
     - _Shininess: 0.01
@@ -73,6 +74,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color0: {r: 0.55785036, g: 0.80842084, b: 0.9852941, a: 0}
     - _Color1: {r: 0, g: 0, b: 0, a: 0}
-    - _Tint: {r: 1, g: 1, b: 1, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 0.38113207, g: 0.76088417, b: 1, a: 0}
     - _TransmissionParams: {r: 0.1, g: 6, b: -2.03, a: 16.95}
     - _Vector0: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
