@@ -32,6 +32,7 @@ public class StageManager : MonoBehaviour
 
 
     bool isBallExist;
+    GameObject[] enemyObject;
     // Update is called once per frame
     void Update()
     {
@@ -42,12 +43,26 @@ public class StageManager : MonoBehaviour
             ballOriginPos = ballPos;
             isBallExist = false;
         }
-        else if(GameObject.Find("Ball(Clone)") == false && isBallExist == false)
+        else if (GameObject.Find("Ball(Clone)") == false && isBallExist == false)
         {
             //print("NonGame");
             //Instantiate(particle[0], ballOriginPos, Quaternion.Euler(Vector3.zero));
             print(ballOriginPos);
             isBallExist = true;
+        }
+
+        GameObject[] playObject = GameObject.FindGameObjectsWithTag("ENEMY");
+
+
+        foreach (GameObject game in playObject)
+        {
+            print(game);
+        }
+
+        if (GameObject.FindWithTag("ENEMY"))
+        {
+
+            //print("Game");
         }
 
 
