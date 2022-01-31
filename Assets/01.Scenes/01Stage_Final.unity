@@ -7418,11 +7418,12 @@ MonoBehaviour:
   MaxPower: 40
   gageSpeed: 0.5
   PowerGage: {fileID: 927730810}
-  ballLimit: 0
   turn: 0
   lr: {fileID: 0}
   maxDistance: 50
   circleQuad: {fileID: 1253838746}
+  ballLimit: 0
+  stageNum: 0
 --- !u!114 &1982684323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8100,7 +8101,7 @@ PrefabInstance:
     - target: {fileID: 5698590516133596115, guid: f3998a0fde4ac0c4082910ab3540ef10, type: 3}
       propertyPath: stage.Array.data[23]
       value: 
-      objectReference: {fileID: 6493018082275419299, guid: 10eff8b47ebdb53458f8c3edd77730a2, type: 3}
+      objectReference: {fileID: 6493018082275419299, guid: 28b0a51f1128c334bbdbe7704c72d6f9, type: 3}
     - target: {fileID: 5698590516133596115, guid: f3998a0fde4ac0c4082910ab3540ef10, type: 3}
       propertyPath: stage.Array.data[24]
       value: 

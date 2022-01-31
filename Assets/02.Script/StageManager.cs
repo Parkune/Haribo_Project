@@ -45,7 +45,7 @@ public class StageManager : MonoBehaviour
         else if(GameObject.Find("Ball(Clone)") == false && isBallExist == false)
         {
             //print("NonGame");
-            Instantiate(particle[0], ballOriginPos, Quaternion.Euler(Vector3.zero));
+            //Instantiate(particle[0], ballOriginPos, Quaternion.Euler(Vector3.zero));
             print(ballOriginPos);
             isBallExist = true;
         }
