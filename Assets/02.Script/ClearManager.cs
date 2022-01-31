@@ -11,12 +11,13 @@ public class ClearManager : MonoBehaviour
     public GameObject ClearPanel;
     [SerializeField]
     public GameObject[] enemys;
+    public int selectStageNum ;
     // Start is called before the first frame update
     void Start()
     {
         ClearPanel.SetActive(false);
         Invoke("findEnemy", 0.8f);
-
+        selectStageNum   = GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().StagrNum;
     }
     void findEnemy()
     {
@@ -28,15 +29,14 @@ public class ClearManager : MonoBehaviour
     }
     public void enemyDie(string enemyName)
     {
-        int selectStageNum = GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().StagrNum;
+       
         //에너미가 죽으면 리스트의 오브젝트들을 비교한다.
         for (int i = 0; i < enemys.Length; i++)
         {
             if (enemyList[i].name == enemyName)
-            {
-                
+            {   
                 enemyList.RemoveAt(i);
-                
+                enemys = enemyList.ToArray();
                 if (enemyList.Count == 0)
                 {
                     print("게임종료");
@@ -46,7 +46,7 @@ public class ClearManager : MonoBehaviour
                     GameObject.FindGameObjectWithTag("Player").GetComponent<Playershooter>().turn =false;
                     DataController.Instance.SaveGameData();
                 }
-                Invoke("findEnemy", 0.9f);
+                //Invoke("findEnemy", 0.3f);
                 return;
 
             }

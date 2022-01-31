@@ -55,11 +55,10 @@ public class UIManager : MonoBehaviour
         shooterScript = player.GetComponent<Playershooter>();
         rotationScript = player.GetComponent<PlayerRotation>();
         int a = displayBallCount;
-        displayBallCT();
         timebtnoff.SetActive(false);
         stopMenuUI.SetActive(false);
         print(a);
-        
+        Invoke("displayBallCT",0.1f);
     }
 
     public void ReturnGame()

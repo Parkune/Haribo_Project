@@ -19,8 +19,8 @@ public class Playershooter : MonoBehaviour
     public float gageSpeed = 30f;
     public Slider PowerGage;
 
-    public int stageNum = 1;
-    public int ballLimit = 0;
+    
+    
     private StageManager stageManager;
     private UIManager uiManager;
     public bool turn;
@@ -30,18 +30,27 @@ public class Playershooter : MonoBehaviour
     private LineRenderer lr;
     public float maxDistance = 40;
     public GameObject circleQuad;
+    public int ballLimit;
+    [SerializeField]
+    int stageNum;
+
     private void Awake()
     {
-        stageManager = GameObject.FindGameObjectWithTag("STAGEMANAGER").GetComponent<StageManager>();
-        stageManager.Ballct.TryGetValue(stageNum, out ballLimit);
-        uiManager = GameObject.FindGameObjectWithTag("UIMANAGER").GetComponent<UIManager>();
+        
+
         turn = true;
     }
 
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        stageManager = GameObject.FindGameObjectWithTag("STAGEMANAGER").GetComponent<StageManager>();
+
+        stageNum = stageManager.selectStageNum;
+        stageManager.Ballct.TryGetValue(stageNum, out ballLimit);
+        print(stageNum + ballLimit);
+        uiManager = GameObject.FindGameObjectWithTag("UIMANAGER").GetComponent<UIManager>();
         nowPower = PowerGage.value;
         PowerGage.maxValue = MaxPower;
         PowerGage.minValue = 0;

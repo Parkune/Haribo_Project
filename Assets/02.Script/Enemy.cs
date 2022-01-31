@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour, IenemyStatus
        {
             stageManager.GetComponent<ClearManager>().enemyDie(this.gameObject.name);
             print(this.gameObject.name);
-           Destroy(this.gameObject, 0.5f);
+            Destroy(this.gameObject, 0.5f);
        }
     }
     public void Resist(float resist)
