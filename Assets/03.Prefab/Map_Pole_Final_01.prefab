@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1558110153366838863}
   - component: {fileID: 7184414837302581741}
   - component: {fileID: 4054436578464368621}
+  - component: {fileID: 8380329093197674072}
   m_Layer: 0
   m_Name: Map_Pole_Final_01
   m_TagString: Untagged
@@ -97,3 +98,15 @@ CapsuleCollider:
   m_Height: 0.032617267
   m_Direction: 2
   m_Center: {x: 0.039733697, y: 0.11686938, z: -0.02262827}
+--- !u!114 &8380329093197674072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3295530454116588664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353f2d49ceaa1ee4ea7e2f248ea197a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
