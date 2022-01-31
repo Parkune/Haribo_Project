@@ -74,8 +74,8 @@ public class BallStart : MonoBehaviour
 
         if (Math.Abs(velocity.x) < 0.05f  &&  Math.Abs(velocity.z) < 0.05f)
         {
-            Invoke("TurnOn", 3f);
-            Destroy(this.gameObject, 3.1f);
+            Invoke("TurnOn", 1.4f);
+            Destroy(this.gameObject, 1.5f);
         }
     }
 

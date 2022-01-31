@@ -8,15 +8,16 @@ public class StageManager : MonoBehaviour
 
     public Dictionary<int, int> Ballct = new Dictionary<int, int>();
     public Dictionary<int, float> stageFrictionForce = new Dictionary<int, float>();
-    public  GameObject[] stage;
+    public GameObject[] stage;
     public Transform spwanPosition;
-
     public int selectStageNum;
+    public GameObject[] particle;
+    Vector3 ballOriginPos;
 
     private void Awake()
     {
-         AddData( );
-         FrictionForceData();
+        AddData();
+        FrictionForceData();
 
         //stageList[selectStageNum].SetActive(true);
     }
@@ -27,13 +28,29 @@ public class StageManager : MonoBehaviour
         selectStageNum = GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().StagrNum;
         print(selectStageNum);
         Instantiate(stage[selectStageNum], spwanPosition);
-       
     }
 
+
+    bool isBallExist;
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameObject.Find("Ball(Clone)") == true)
+        {
+            //print("Game");
+            Vector3 ballPos = GameObject.Find("Ball(Clone)").transform.position;
+            ballOriginPos = ballPos;
+            isBallExist = false;
+        }
+        else if(GameObject.Find("Ball(Clone)") == false && isBallExist == false)
+        {
+            //print("NonGame");
+            Instantiate(particle[0], ballOriginPos, Quaternion.Euler(Vector3.zero));
+            print(ballOriginPos);
+            isBallExist = true;
+        }
+
+
     }
     void FrictionForceData()
     {
@@ -66,31 +83,31 @@ public class StageManager : MonoBehaviour
 
     void AddData()
     {
-        Ballct.Add(0,3);
-        Ballct.Add(1,3);
-        Ballct.Add(2,3);
-        Ballct.Add(3,5);
-        Ballct.Add(4,5);
-        Ballct.Add(5,3);
-        Ballct.Add(6,3);
-        Ballct.Add(7,3);
-        Ballct.Add(8,3);
-        Ballct.Add(9,3);
-        Ballct.Add(10,3);
-        Ballct.Add(11,3);
-        Ballct.Add(12,3);
-        Ballct.Add(13,3);
-        Ballct.Add(14,3);
-        Ballct.Add(15,3);
-        Ballct.Add(16,3);
-        Ballct.Add(17,3);
-        Ballct.Add(18,3);
-        Ballct.Add(19,3);
-        Ballct.Add(20,3);
-        Ballct.Add(21,3);
-        Ballct.Add(22,3);
-        Ballct.Add(23,3);
-        Ballct.Add(24,3);
+        Ballct.Add(0, 3);
+        Ballct.Add(1, 3);
+        Ballct.Add(2, 3);
+        Ballct.Add(3, 5);
+        Ballct.Add(4, 5);
+        Ballct.Add(5, 3);
+        Ballct.Add(6, 3);
+        Ballct.Add(7, 3);
+        Ballct.Add(8, 3);
+        Ballct.Add(9, 3);
+        Ballct.Add(10, 3);
+        Ballct.Add(11, 3);
+        Ballct.Add(12, 3);
+        Ballct.Add(13, 3);
+        Ballct.Add(14, 3);
+        Ballct.Add(15, 3);
+        Ballct.Add(16, 3);
+        Ballct.Add(17, 3);
+        Ballct.Add(18, 3);
+        Ballct.Add(19, 3);
+        Ballct.Add(20, 3);
+        Ballct.Add(21, 3);
+        Ballct.Add(22, 3);
+        Ballct.Add(23, 3);
+        Ballct.Add(24, 3);
     }
 
 }
