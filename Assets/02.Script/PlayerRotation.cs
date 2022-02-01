@@ -15,7 +15,7 @@ public class PlayerRotation : MonoBehaviour
     {
         return new Vector3
         (
-        Mathf.Clamp(position.x, -2.5f, 2.5f) , this.transform.position.y, this.transform.position.z
+        Mathf.Clamp(position.x, -2.75f, 2.75f) , this.transform.position.y, this.transform.position.z
         );
     }
     // Start is called before the first frame update

@@ -154,10 +154,11 @@ public class Gimmicks : MonoBehaviour
         }
         if (GimmickNum == 5)
         {
-            //GimmickNum=BlackHoleCube
-            //Reflect(collision);
-            other.gameObject.GetComponent<BallStart>().zeroVelocity();
-            print("ºí·¢È¦¿¡ ¸ÔÇû½À´Ï´Ù.");
+                //GimmickNum=BlackHoleCube
+                //Reflect(collision);
+                Rigidbody ballRB = other.gameObject.GetComponent<Rigidbody>();
+                ballRB.velocity = ballRB.velocity * 0;
+                print("ºí·¢È¦¿¡ ¸ÔÇû½À´Ï´Ù.");
         }
         if (GimmickNum == 8)
         {

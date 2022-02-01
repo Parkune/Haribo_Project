@@ -118,6 +118,8 @@ MonoBehaviour:
   stageNum: 6
   Copy: 0
   collisionSound: {fileID: 0}
+  isBallActive: 0
+  particle: {fileID: 5027557607549268366, guid: 84cd977b2b441ec46a1c3681391a714a, type: 3}
 --- !u!114 &7629176091804755417
 MonoBehaviour:
   m_ObjectHideFlags: 0

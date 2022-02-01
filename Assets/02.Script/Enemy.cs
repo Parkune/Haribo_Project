@@ -21,31 +21,31 @@ public class Enemy : MonoBehaviour, IenemyStatus
         {
             enemyName = "nature";
             enemyHealth = 1;
-            enemyResist = 0.1f;
+            enemyResist = 0.4f;
         }
         else if (enemyNum == 2)
         {
             enemyName = "ice";
             enemyHealth = 2;
-            enemyResist = 0.3f;
+            enemyResist = 0.5f;
         }
         else if (enemyNum == 3)
         {
             enemyName = "lava";
             enemyHealth = 2;
-            enemyResist = 0.4f;
+            enemyResist = 0.6f;
         }
         else if (enemyNum == 4)
         {
             enemyName = "desert";
             enemyHealth = 3;
-            enemyResist = 0.4f;
+            enemyResist = 0.7f;
         }
         else if (enemyNum == 5)
         {
             enemyName = "space";
             enemyHealth = 4;
-            enemyResist = 0.4f;
+            enemyResist = 0.7f;
         }
     }
     public void Damage(float damage)

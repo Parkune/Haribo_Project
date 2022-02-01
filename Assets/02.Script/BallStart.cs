@@ -61,6 +61,7 @@ public class BallStart : MonoBehaviour
     // Update is called once per frame
 
     public bool isBallActive;
+    public GameObject particle;
     private void FixedUpdate()
     {
         velocity = rb.velocity;
@@ -79,9 +80,11 @@ public class BallStart : MonoBehaviour
 
         if (Math.Abs(velocity.x) < 0.05f  &&  Math.Abs(velocity.z) < 0.05f)
         {
-            Invoke("TurnOn", 1.4f);
+            Invoke("TurnOn", 1.3f);
+            Instantiate(particle, this.gameObject.transform.position, Quaternion.Euler(Vector3.zero));
+            this.gameObject.SetActive(false);
             Destroy(this.gameObject, 1.5f);
-            isBallActive = true;
+            //isBallActive = true;
         }
     }
 
