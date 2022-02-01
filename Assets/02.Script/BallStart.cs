@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BallStart : MonoBehaviour
 {
+    public static BallStart instance;
     // Start is called before the first frame update
     Rigidbody rb;
     public Vector3 startVelocity = new Vector3(10f,0, 10f);
@@ -25,6 +26,7 @@ public class BallStart : MonoBehaviour
     private float frictionforce;
     private void Awake()
     {
+        BallStart.instance = this;
         stageManager = GameObject.FindGameObjectWithTag("STAGEMANAGER").GetComponent<StageManager>();
         stageNum = stageManager.selectStageNum;
         stageManager.stageFrictionForce.TryGetValue(stageNum, out frictionforce);
@@ -49,6 +51,8 @@ public class BallStart : MonoBehaviour
         print("지금 턴온 합니다,");
     }
 
+
+
     public void zeroVelocity()
     {
         Invoke("TurnOn", 0.2f);
@@ -56,6 +60,7 @@ public class BallStart : MonoBehaviour
     }
     // Update is called once per frame
 
+    public bool isBallActive;
     private void FixedUpdate()
     {
         velocity = rb.velocity;
@@ -76,6 +81,7 @@ public class BallStart : MonoBehaviour
         {
             Invoke("TurnOn", 1.4f);
             Destroy(this.gameObject, 1.5f);
+            isBallActive = true;
         }
     }
 

@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour, IenemyStatus
        hpSlider.value -= damage;
        if(enemyHealth <= 0)
        {
+            stageManager.GetComponent<StageManager>().enemyParticle();
             stageManager.GetComponent<ClearManager>().enemyDie(this.gameObject.name);
             print(this.gameObject.name);
             Destroy(this.gameObject, 0.5f);
