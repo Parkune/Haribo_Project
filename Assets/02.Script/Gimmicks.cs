@@ -121,6 +121,9 @@ public class Gimmicks : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+    if(other.gameObject.CompareTag("BALL") )
+    {
         if (GimmickNum == 1)
         {
             //GimmickNum=BigCube
@@ -182,6 +185,16 @@ public class Gimmicks : MonoBehaviour
                 copyrb.velocity = reflectVelocity * Mathf.Max(speed, 1f);
             }
         }
+     } else if(other.gameObject.CompareTag("ENEMY"))
+     {
+        if (GimmickNum == 5)
+        {
+            //GimmickNum=BlackHoleCube
+            //Reflect(collision);
+            other.gameObject.GetComponent<Enemy>().Damage(5);
+            print("ºí·¢È¦¿¡ ¸ÔÇû½À´Ï´Ù.");
+        }
+     }
     }
 
     float rotSpeed = 30f;

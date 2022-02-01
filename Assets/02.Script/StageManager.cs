@@ -44,11 +44,6 @@ public class StageManager : MonoBehaviour
             print("RBVelocity");
             findBall();
         }
-
-
-
-
-
     }
 
     void findBall()
