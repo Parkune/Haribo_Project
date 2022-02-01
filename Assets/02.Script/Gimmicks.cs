@@ -174,8 +174,10 @@ public class Gimmicks : MonoBehaviour
             //collision.contacts[0].point
             if (other.gameObject.GetComponent<BallStart>().Copy == false)
             {
+                other.gameObject.GetComponent<BallStart>().Copy = true;
                 GameObject copy = Instantiate(CopyBall, trPosition, Quaternion.identity);
                 copy.GetComponent<BallStart>().Copy = true;
+
                 Rigidbody copyrb = copy.GetComponent<Rigidbody>();
                 copyrb.velocity = reflectVelocity * Mathf.Max(speed, 1f);
             }
