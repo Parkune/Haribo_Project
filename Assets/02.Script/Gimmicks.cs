@@ -35,7 +35,7 @@ public class Gimmicks : MonoBehaviour
         // print(myFuction);
         if (GimmickNum == 7)
         {
-            Material mat = this.gameObject.GetComponent<Renderer>().material;
+            Material mat = this.gameObject.GetComponentInChildren<Renderer>().material;
             Color color = mat.color;
             color.a = 0.3f;
             mat.color = color;

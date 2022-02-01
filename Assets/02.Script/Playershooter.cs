@@ -15,7 +15,7 @@ public class Playershooter : MonoBehaviour
 
     //파워게이지를 제어하는 함수
     public float nowPower = 1;
-    public float MaxPower = 50f;
+    public float MaxPower = 35f;
     public float gageSpeed = 30f;
     public Slider PowerGage;
 

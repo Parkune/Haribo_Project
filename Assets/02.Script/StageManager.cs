@@ -134,21 +134,21 @@ public class StageManager : MonoBehaviour
         Ballct.Add(6, 4);
         Ballct.Add(7, 5);
         Ballct.Add(8, 6);
-        Ballct.Add(9, 4);
+        Ballct.Add(9, 5);
         Ballct.Add(10, 4);
         Ballct.Add(11, 4);
         Ballct.Add(12, 6);
         Ballct.Add(13, 5);
         Ballct.Add(14, 6);
         Ballct.Add(15, 5);
-        Ballct.Add(16, 7);
-        Ballct.Add(17, 7);
+        Ballct.Add(16, 5);
+        Ballct.Add(17, 5);
         Ballct.Add(18, 3);
-        Ballct.Add(19, 7);
-        Ballct.Add(20, 7);
-        Ballct.Add(21, 5);
-        Ballct.Add(22, 8);
-        Ballct.Add(23, 6);
+        Ballct.Add(19, 5);
+        Ballct.Add(20, 6);
+        Ballct.Add(21, 6);
+        Ballct.Add(22, 7);
+        Ballct.Add(23, 7);
         Ballct.Add(24, 13);
     }
 
