@@ -20,9 +20,14 @@ public class DestroyZone : MonoBehaviour
     {
         if(other.CompareTag("BALL"))
         {
-            Destroy(other.gameObject);
+
+            other.transform.position = Vector3.Lerp(other.transform.position , new Vector3(0.5f,5, -5), Time.deltaTime);
+            Destroy(other.gameObject, 0.4f);
+
             GameObject.FindGameObjectWithTag("Player").GetComponent<Playershooter>().turn = true;
+
             print("´ê¾Ò´Ù");
+
         } else if(other.CompareTag("ENEMY"))
         {
             Destroy(other.gameObject);

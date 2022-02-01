@@ -5453,7 +5453,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &114796633623992329
 MonoBehaviour:
@@ -6213,7 +6213,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &5246488326552539659
 MonoBehaviour:
@@ -12986,6 +12986,10 @@ PrefabInstance:
     - target: {fileID: 8925873089880024354, guid: b22cbc261ad1f60489b34d1341eebe19, type: 3}
       propertyPath: m_Name
       value: EnemyIce
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925873089880024364, guid: b22cbc261ad1f60489b34d1341eebe19, type: 3}
+      propertyPath: m_Constraints
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 8925873089880024365, guid: b22cbc261ad1f60489b34d1341eebe19, type: 3}
       propertyPath: m_RootOrder

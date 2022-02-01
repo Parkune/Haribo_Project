@@ -3774,6 +3774,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6621075009583567878, guid: 59cd8870e2412fa48aba6ac1ba836722, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 6621075009583567879, guid: 59cd8870e2412fa48aba6ac1ba836722, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -4952,6 +4956,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyDesert (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7042963037235084478, guid: 39a94f1d44a2cc842b513deb3ead3b3f, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 7042963037235084479, guid: 39a94f1d44a2cc842b513deb3ead3b3f, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -5724,6 +5732,10 @@ PrefabInstance:
     - target: {fileID: 6621075009241060403, guid: 59cd8870e2412fa48aba6ac1ba836722, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621075009583567878, guid: 59cd8870e2412fa48aba6ac1ba836722, type: 3}
+      propertyPath: m_Constraints
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 6621075009583567879, guid: 59cd8870e2412fa48aba6ac1ba836722, type: 3}
       propertyPath: m_RootOrder

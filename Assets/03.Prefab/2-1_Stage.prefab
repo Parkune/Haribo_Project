@@ -296,6 +296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2-1_Stage
       objectReference: {fileID: 0}
+    - target: {fileID: 2302594992164300716, guid: 1ad2a707e2467394abe90a80d970f189, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 2302594992164300717, guid: 1ad2a707e2467394abe90a80d970f189, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.16
@@ -343,6 +347,10 @@ PrefabInstance:
     - target: {fileID: 7569009594705195424, guid: 1ad2a707e2467394abe90a80d970f189, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7569009594705195425, guid: 1ad2a707e2467394abe90a80d970f189, type: 3}
+      propertyPath: m_Constraints
+      value: 116
       objectReference: {fileID: 0}
     - target: {fileID: 7569009595706470804, guid: 1ad2a707e2467394abe90a80d970f189, type: 3}
       propertyPath: m_AnchorMax.y
