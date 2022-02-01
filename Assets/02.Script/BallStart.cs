@@ -85,6 +85,8 @@ public class BallStart : MonoBehaviour
         }
     }
 
+
+
     private void OnCollisionEnter(Collision collision)
     {
         this.audioSource.Play();

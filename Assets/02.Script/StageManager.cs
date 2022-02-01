@@ -25,7 +25,6 @@ public class StageManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        findEnemy();
         selectStageNum = GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().StagrNum;
         print(selectStageNum);
         Instantiate(stage[selectStageNum], spwanPosition);
@@ -33,33 +32,10 @@ public class StageManager : MonoBehaviour
 
 
 
-    void findEnemy()
-    {
-        playObject = GameObject.FindGameObjectsWithTag("ENEMY");
-        for (int i = 0; i < playObject.Length; i++)
-        {
-            enemyForParticleList.Add(playObject[i]);
-        }
-
-
-    }
-
-    public void enemyParticle()
-    {
-        for (int i = 0; i < playObject.Length; i++)
-        {
-            if (enemyForParticleList[i].name.Contains("Ice"))
-            {
-                print("IceParticle");
-            }
-        }
-
-
-    }
+    
 
     bool isBallExist;
-    GameObject[] playObject;
-    public List<GameObject> enemyForParticleList = new List<GameObject>();
+   
     // Update is called once per frame
     void Update()
     {
@@ -69,8 +45,8 @@ public class StageManager : MonoBehaviour
             findBall();
         }
 
-      
-        
+
+
 
 
     }
@@ -79,7 +55,7 @@ public class StageManager : MonoBehaviour
     {
         if (GameObject.Find("Ball(Clone)") == true)
         {
-            print("Game");
+            //print("Game");
             Vector3 ballPos = GameObject.Find("Ball(Clone)").transform.position;
             ballOriginPos = ballPos;
             isBallExist = false;
@@ -87,9 +63,9 @@ public class StageManager : MonoBehaviour
         }
         else if (GameObject.Find("Ball(Clone)") == false && isBallExist == false)
         {
-            print("NonGame");
+            //print("NonGame");
             Instantiate(particle[0], ballOriginPos, Quaternion.Euler(Vector3.zero));
-            print(ballOriginPos);
+            //print(ballOriginPos);
             isBallExist = true;
             BallStart.instance.isBallActive = false;
         }

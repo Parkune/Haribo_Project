@@ -13,6 +13,8 @@ public class DestroyZone : MonoBehaviour
     }
 
     GameObject stageManager;
+    bool isBallActiveFalse;
+
 
     private void OnTriggerEnter(Collider other)
     {

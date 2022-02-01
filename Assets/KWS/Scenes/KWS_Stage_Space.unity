@@ -1404,6 +1404,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9042091642172615804, guid: d71890edf84808b4e969d2701111c888, type: 3}
+      propertyPath: enemyNum
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9042091642172615807, guid: d71890edf84808b4e969d2701111c888, type: 3}
       propertyPath: m_Name
       value: EnemyLava
@@ -1551,6 +1555,7 @@ MonoBehaviour:
   plain: {fileID: 889740881}
   pain: {fileID: 206218127}
   particle: {fileID: 1468696954}
+  deathParticle: {fileID: 1549845842}
 --- !u!1 &219969115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,6 +1947,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 459750, guid: cd4d7020429cde74db076ffa72495419, type: 3}
   m_PrefabInstance: {fileID: 260885442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &279079768 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19898698, guid: e49403f034d74ee44aa8a41b0ee4abfd, type: 3}
+  m_PrefabInstance: {fileID: 1224904679}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &287613769
 GameObject:
@@ -2976,6 +2986,7 @@ MonoBehaviour:
   plain: {fileID: 1542577651}
   pain: {fileID: 1283573201}
   particle: {fileID: 2109467720}
+  deathParticle: {fileID: 1883423512}
 --- !u!4 &463543020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9042091642172615792, guid: d71890edf84808b4e969d2701111c888, type: 3}
@@ -3828,6 +3839,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9042091642172615804, guid: d71890edf84808b4e969d2701111c888, type: 3}
+      propertyPath: enemyNum
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 9042091642172615807, guid: d71890edf84808b4e969d2701111c888, type: 3}
       propertyPath: m_Name
       value: EnemyDesert
@@ -4383,6 +4398,7 @@ MonoBehaviour:
   plain: {fileID: 930950765}
   pain: {fileID: 786061353}
   particle: {fileID: 238833009}
+  deathParticle: {fileID: 717009616}
 --- !u!4 &670494318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9042091642172615792, guid: d71890edf84808b4e969d2701111c888, type: 3}
@@ -4518,6 +4534,7 @@ MonoBehaviour:
   plain: {fileID: 332963903}
   pain: {fileID: 200869064}
   particle: {fileID: 110197931}
+  deathParticle: {fileID: 1853837352}
 --- !u!1 &699872566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5272f9c48d04c9941965b5e85e89f409, type: 3}
@@ -4713,6 +4730,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6685cbed26fcf4948a9bcc3b1a85d44f, type: 3}
+--- !u!198 &717009616 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19860484, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
+  m_PrefabInstance: {fileID: 1731860173}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &726403489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5643,6 +5665,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9042091642172615804, guid: d71890edf84808b4e969d2701111c888, type: 3}
+      propertyPath: enemyNum
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9042091642172615807, guid: d71890edf84808b4e969d2701111c888, type: 3}
       propertyPath: m_Name
       value: EnemyIce
@@ -5975,7 +6001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9042091642172615807, guid: d71890edf84808b4e969d2701111c888, type: 3}
       propertyPath: m_Name
-      value: Enemy (2)
+      value: EnemyNature
       objectReference: {fileID: 0}
     - target: {fileID: 9042091642172615807, guid: d71890edf84808b4e969d2701111c888, type: 3}
       propertyPath: m_IsActive
@@ -6148,6 +6174,7 @@ MonoBehaviour:
   plain: {fileID: 1309834824}
   pain: {fileID: 484159041}
   particle: {fileID: 90308336}
+  deathParticle: {fileID: 279079768}
 --- !u!4 &924929361 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9042091642172615792, guid: d71890edf84808b4e969d2701111c888, type: 3}
@@ -10157,6 +10184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e12806050c641f341b85c4b57304e6d4, type: 3}
+--- !u!198 &1549845842 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19821056, guid: 079954accd64b32419ec069129c81273, type: 3}
+  m_PrefabInstance: {fileID: 1054241852}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1563852618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11074,6 +11106,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9042091642172615804, guid: d71890edf84808b4e969d2701111c888, type: 3}
+      propertyPath: enemyNum
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9042091642172615807, guid: d71890edf84808b4e969d2701111c888, type: 3}
       propertyPath: m_Name
       value: EnemyMoon
@@ -11575,6 +11611,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844869895}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!198 &1853837352 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19814690, guid: cd4d7020429cde74db076ffa72495419, type: 3}
+  m_PrefabInstance: {fileID: 260885442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1883423512 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3123075737211501168, guid: a3f72d5f213bb7d458dfc2c4369e7acf, type: 3}
+  m_PrefabInstance: {fileID: 778636482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1896541848
 GameObject:
   m_ObjectHideFlags: 0
@@ -13292,9 +13338,33 @@ PrefabInstance:
       propertyPath: ClearPanel
       value: 
       objectReference: {fileID: 1297717036}
+    - target: {fileID: 5698590516133596112, guid: f3998a0fde4ac0c4082910ab3540ef10, type: 3}
+      propertyPath: particles.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698590516133596112, guid: f3998a0fde4ac0c4082910ab3540ef10, type: 3}
+      propertyPath: particles.Array.data[0]
+      value: 
+      objectReference: {fileID: 3183674663307814478, guid: 22a9025097888824195b3629cc190982, type: 3}
+    - target: {fileID: 5698590516133596112, guid: f3998a0fde4ac0c4082910ab3540ef10, type: 3}
+      propertyPath: particles.Array.data[1]
+      value: 
+      objectReference: {fileID: 855619629659414820, guid: a427bf7c398287a418d26368c629258b, type: 3}
+    - target: {fileID: 5698590516133596112, guid: f3998a0fde4ac0c4082910ab3540ef10, type: 3}
+      propertyPath: particles.Array.data[2]
+      value: 
+      objectReference: {fileID: 7481319769643040871, guid: b2b63ea8586634c4c80d7822ab6b4236, type: 3}
+    - target: {fileID: 5698590516133596112, guid: f3998a0fde4ac0c4082910ab3540ef10, type: 3}
+      propertyPath: particles.Array.data[3]
+      value: 
+      objectReference: {fileID: 6448289154819948263, guid: 7f06ea1345e22464b9bc3a17524ee044, type: 3}
+    - target: {fileID: 5698590516133596112, guid: f3998a0fde4ac0c4082910ab3540ef10, type: 3}
+      propertyPath: particles.Array.data[4]
+      value: 
+      objectReference: {fileID: 3708368869488388583, guid: 5d10ace6f22b95640a32ad99342355c5, type: 3}
     - target: {fileID: 5698590516133596115, guid: f3998a0fde4ac0c4082910ab3540ef10, type: 3}
       propertyPath: particle.Array.size
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5698590516133596115, guid: f3998a0fde4ac0c4082910ab3540ef10, type: 3}
       propertyPath: particle.Array.data[0]

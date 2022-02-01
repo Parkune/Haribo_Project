@@ -10,47 +10,60 @@ public class Enemy : MonoBehaviour, IenemyStatus
 
     public int enemyNum;
     public int damage = 1;
-    public string enemyName{get; set;}
-    public float enemyHealth{get; set;}
-    public float enemyResist{get; set;}
+    public string enemyName { get; set; }
+    public float enemyHealth { get; set; }
+    public float enemyResist { get; set; }
 
     public Slider hpSlider;
     public void Initialize()
     {
-        if(enemyNum == 1)
+        if (enemyNum == 1)
         {
-            enemyName = "apple";
+            enemyName = "nature";
             enemyHealth = 1;
             enemyResist = 0.1f;
-        } 
-        else if(enemyNum == 2)
+        }
+        else if (enemyNum == 2)
         {
-            enemyName = "mellon";
+            enemyName = "ice";
             enemyHealth = 2;
-            enemyResist =  0.3f;
-        } else if(enemyNum == 3)
+            enemyResist = 0.3f;
+        }
+        else if (enemyNum == 3)
         {
-            enemyName = "orange";
+            enemyName = "lava";
+            enemyHealth = 2;
+            enemyResist = 0.4f;
+        }
+        else if (enemyNum == 4)
+        {
+            enemyName = "desert";
             enemyHealth = 3;
+            enemyResist = 0.4f;
+        }
+        else if (enemyNum == 5)
+        {
+            enemyName = "space";
+            enemyHealth = 4;
             enemyResist = 0.4f;
         }
     }
     public void Damage(float damage)
     {
-       enemyHealth -= damage;
-       hpSlider.value -= damage;
-       if(enemyHealth <= 0)
-       {
-            stageManager.GetComponent<StageManager>().enemyParticle();
+        enemyHealth -= damage;
+        hpSlider.value -= damage;
+        if (enemyHealth <= 0)
+        {
             stageManager.GetComponent<ClearManager>().enemyDie(this.gameObject.name);
             print(this.gameObject.name);
-            Destroy(this.gameObject, 0.5f);
-       }
+            enemyAnimation.GetComponent<EnemyAnimation>().SetActiveAllFalse();
+            Destroy(this.gameObject, 10.0f);
+        }
     }
     public void Resist(float resist)
     {
-       //resist = enemyResist;
-       physics.dynamicFriction = resist;
+        //resist = enemyResist;
+        physics.dynamicFriction = resist;
     }
 
     void Awake()
@@ -59,16 +72,17 @@ public class Enemy : MonoBehaviour, IenemyStatus
     }
     [SerializeField]
     private GameObject stageManager;
+    private Component enemyAnimation;
     // Start is called before the first frame update
     void Start()
     {
         Initialize();
         physics = this.gameObject.GetComponent<Collider>().material;
-            hpSlider.maxValue = enemyHealth;
-            hpSlider.minValue = 0;
-            hpSlider.value = hpSlider.maxValue;
+        hpSlider.maxValue = enemyHealth;
+        hpSlider.minValue = 0;
+        hpSlider.value = hpSlider.maxValue;
         stageManager = GameObject.FindGameObjectWithTag("STAGEMANAGER");
-        
+        enemyAnimation = gameObject.GetComponent<EnemyAnimation>();
         Resist(enemyResist);
         //Damage(damage);
     }
