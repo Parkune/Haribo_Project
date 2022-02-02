@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LineRenderAnimation : MonoBehaviour
+public class BackgroundOffset : MonoBehaviour
 {
-
-    private LineRenderer lr;
     private Renderer rend;
     float offset;
-    float scrollSpeed = 2f;
+    float scrollSpeed = 0.1f;
     // Start is called before the first frame update
     void Start()
     {
-        lr = GetComponent<LineRenderer>();
         rend = GetComponent<Renderer>();
         offset = 0f;
     }
@@ -26,6 +23,5 @@ public class LineRenderAnimation : MonoBehaviour
         {
             offset = 0;
         }
-        //print(offset);
     }
 }
