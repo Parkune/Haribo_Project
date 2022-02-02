@@ -25,7 +25,7 @@ public class SlideBarText : MonoBehaviour
 
     public void ChangedValue(float value)
     {
-        if (value <= 20 && value > 3)
+        if (value <= 15 && value > 3)
         {
             min.SetActive(true);
         }
@@ -33,7 +33,7 @@ public class SlideBarText : MonoBehaviour
         {
             min.SetActive(false);
         }
-        if (value <= 30 && value > 20)
+        if (value <= 25 && value > 15)
         {
             mid.SetActive(true);
         }
@@ -41,7 +41,7 @@ public class SlideBarText : MonoBehaviour
         {
             mid.SetActive(false);
         }
-        if (value <= 35 && value > 30)
+        if (value <= 30 && value > 25)
         {
             max.SetActive(true);
         }

@@ -26,9 +26,9 @@ public class SelectOptionManager : MonoBehaviour
     public void SelectStageBtn()
     {
         GameObject clickBtn = EventSystem.current.currentSelectedGameObject;
-        print(clickBtn.name);
+      //  print(clickBtn.name);
         StagrNum = clickBtn.GetComponent<BtnStageNum>().stageNum;
-        print(StagrNum);
+       // print(StagrNum);
         if (clickBtn.GetComponent<BtnStageNum>().isClear == true)
         {
             SceneManager.LoadScene("01Stage_Final");

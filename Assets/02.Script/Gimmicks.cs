@@ -44,7 +44,7 @@ public class Gimmicks : MonoBehaviour
 
     void Reflect(Collision collision)
     {
-        print("¹Ý»çÇÔ¼ö ½ÇÇà");
+       // print("¹Ý»çÇÔ¼ö ½ÇÇà");
         Rigidbody ballRB = collision.gameObject.GetComponent<Rigidbody>();
         Vector3 velocity = collision.gameObject.GetComponent<BallStart>().velocity;
         ballRB.velocity = calculateReflect(velocity, Vector3.zero, -collision.GetContact(0).normal);
@@ -68,16 +68,9 @@ public class Gimmicks : MonoBehaviour
             //  ¸Å°³º¯¼ö¸¦ ´Ù½Ã ÇÑ ¹ø ÁöÁ¤ÇØÁà¾ßÇÏ´Âµ¥ ±×°Ô ºÒ°¡
             //Invoke(myFuction, 0.5f);
 
-            if (GimmickNum == 2)
-            {
-                collision.gameObject.transform.localScale = collision.gameObject.transform.localScale / 1.5f;
-                print("Å¥ºêÀÛ¾ÆÁü");
-                Reflect(collision);
-                //GimmickNum=SmallCube
 
-            }
            
-            else if (GimmickNum == 6)
+             if (GimmickNum == 6)
             {
                 BoxCollider box = this.gameObject.GetComponent<BoxCollider>();
                 Reflect(collision);
@@ -128,16 +121,24 @@ public class Gimmicks : MonoBehaviour
         {
             //GimmickNum=BigCube
             other.gameObject.transform.localScale = other.gameObject.transform.localScale * 1.5f;
-            print("Å¥ºêÄ¿Áü");
+            //print("Å¥ºêÄ¿Áü");
             //Reflect(collision);
         }
-        if (GimmickNum == 3)
+        if (GimmickNum == 2)
+        {
+                other.gameObject.transform.localScale = other.gameObject.transform.localScale * 0.5f;
+                //print("Å¥ºêÀÛ¾ÆÁü");
+                //Reflect(collision);
+                //GimmickNum=SmallCube
+
+        }
+            if (GimmickNum == 3)
         {
             //GimmickNum=SpeedUpCube
             //SpeedUp = true;
            // Reflect(collision);
 
-            print("Å¥ºê¼Óµµ »¡¶óÁü");
+           // print("Å¥ºê¼Óµµ »¡¶óÁü");
             Rigidbody ballRB = other.gameObject.GetComponent<Rigidbody>();
             ballRB.velocity = ballRB.velocity * 1.5f;
             //SpeedUp = false;
@@ -149,7 +150,7 @@ public class Gimmicks : MonoBehaviour
             //Reflect(collision);
             Rigidbody ballRB = other.gameObject.GetComponent<Rigidbody>();
             ballRB.velocity = ballRB.velocity * 0.5f;
-            print("Å¥ºê¼Óµµ ´À·ÁÁü");
+            //print("Å¥ºê¼Óµµ ´À·ÁÁü");
             //SpeedDown = false;
         }
         if (GimmickNum == 5)
@@ -158,7 +159,7 @@ public class Gimmicks : MonoBehaviour
                 //Reflect(collision);
                 Rigidbody ballRB = other.gameObject.GetComponent<Rigidbody>();
                 ballRB.velocity = ballRB.velocity * 0;
-                print("ºí·¢È¦¿¡ ¸ÔÇû½À´Ï´Ù.");
+              //  print("ºí·¢È¦¿¡ ¸ÔÇû½À´Ï´Ù.");
         }
         if (GimmickNum == 8)
         {
@@ -193,7 +194,7 @@ public class Gimmicks : MonoBehaviour
             //GimmickNum=BlackHoleCube
             //Reflect(collision);
             other.gameObject.GetComponent<Enemy>().Damage(5);
-            print("ºí·¢È¦¿¡ ¸ÔÇû½À´Ï´Ù.");
+            //print("ºí·¢È¦¿¡ ¸ÔÇû½À´Ï´Ù.");
         }
      }
     }
@@ -204,7 +205,7 @@ public class Gimmicks : MonoBehaviour
     {
         if(GimmickNum == 9)
         {
-            print("±â¹Í9µé¾î¿È");
+           // print("±â¹Í9µé¾î¿È");
            this.gameObject.transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));
         }
     }

@@ -109,7 +109,7 @@ public class PlayerRotation : MonoBehaviour
     public void pressRightUp()
     {
         Invoke("toRight", 0.05f);
-        print(Left + "라이트펄스");
+       // print(Left + "라이트펄스");
     }
     void toRight()
     {
@@ -118,12 +118,12 @@ public class PlayerRotation : MonoBehaviour
         public void pressRightDown()
     {
         Right = true;
-        print(Left + "라이트트루");
+        //print(Left + "라이트트루");
     }
         public void pressLeftUp()
     {
         Invoke("toLeft", 0.05f);
-        print(Left + "레프트펄스");
+        //print(Left + "레프트펄스");
     }
     void toLeft()
     {
@@ -132,7 +132,7 @@ public class PlayerRotation : MonoBehaviour
     public void pressLeftDown()
     {
         Left = true;
-        print(Left + "레프트 트루");
+       // print(Left + "레프트 트루");
     }
 
 

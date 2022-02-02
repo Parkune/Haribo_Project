@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour, IenemyStatus
         if (enemyHealth <= 0)
         {
             stageManager.GetComponent<ClearManager>().enemyDie(this.gameObject.name);
-            print(this.gameObject.name);
+            //print(this.gameObject.name);
             enemyAnimation.GetComponent<EnemyAnimation>().SetActiveAllFalse();
             Destroy(this.gameObject, 10.0f);
         }

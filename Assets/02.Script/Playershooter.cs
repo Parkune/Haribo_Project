@@ -15,7 +15,7 @@ public class Playershooter : MonoBehaviour
 
     //파워게이지를 제어하는 함수
     public float nowPower = 1;
-    public float MaxPower = 35f;
+    public float MaxPower = 30f;
     public float gageSpeed = 30f;
     public Slider PowerGage;
 
@@ -49,7 +49,7 @@ public class Playershooter : MonoBehaviour
 
         stageNum = stageManager.selectStageNum;
         stageManager.Ballct.TryGetValue(stageNum, out ballLimit);
-        print(stageNum + ballLimit);
+        //print(stageNum + ballLimit);
         uiManager = GameObject.FindGameObjectWithTag("UIMANAGER").GetComponent<UIManager>();
         nowPower = PowerGage.value;
         PowerGage.maxValue = MaxPower;
@@ -175,7 +175,7 @@ public class Playershooter : MonoBehaviour
         }
                      
                      nowPower += Time.deltaTime * 20;
-                     nowPower = Mathf.Clamp(nowPower, 0, 40);
+                     nowPower = Mathf.Clamp(nowPower, 0, 30);
                      PowerGage.value = nowPower;
                      anim.SetBool("Shooting", true);
     }

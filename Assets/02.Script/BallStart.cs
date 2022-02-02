@@ -48,7 +48,7 @@ public class BallStart : MonoBehaviour
     void TurnOn()
     {
         turnManager.playerTurnOn();
-        print("지금 턴온 합니다,");
+        //print("지금 턴온 합니다,");
     }
 
 
@@ -81,14 +81,18 @@ public class BallStart : MonoBehaviour
         if (Math.Abs(velocity.x) < 0.05f  &&  Math.Abs(velocity.z) < 0.05f)
         {
             Invoke("TurnOn", 1.3f);
-            Instantiate(particle, this.gameObject.transform.position, Quaternion.Euler(Vector3.zero));
+            GameObject OB = Instantiate(particle, this.gameObject.transform.position, Quaternion.Euler(Vector3.zero));
             this.gameObject.SetActive(false);
+            Destroy(OB, 2f);
             Destroy(this.gameObject, 1.5f);
             //isBallActive = true;
         }
     }
 
-
+    void setAcf(GameObject OB)
+    {
+        OB.SetActive(false);
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

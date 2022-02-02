@@ -3912,10 +3912,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1980}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4193,7 +4193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224137540336588508, guid: cc43aa00848c8bc40b7ee6ded0722cdb, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 350
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 224137540336588508, guid: cc43aa00848c8bc40b7ee6ded0722cdb, type: 3}
       propertyPath: m_SizeDelta.y
@@ -4241,7 +4241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224137540336588508, guid: cc43aa00848c8bc40b7ee6ded0722cdb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 474
+      value: 372
       objectReference: {fileID: 0}
     - target: {fileID: 224137540336588508, guid: cc43aa00848c8bc40b7ee6ded0722cdb, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4906,7 +4906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 466, y: -81}
+  m_AnchoredPosition: {x: 274, y: -81}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1304736047
@@ -5063,7 +5063,7 @@ MonoBehaviour:
   hoverSound: {fileID: 0}
   clickSound: {fileID: 0}
   buttonVar: {fileID: 0}
-  normalText: {fileID: 0}
+  normalText: {fileID: 653152079}
   soundSource: {fileID: 0}
   rippleParent: {fileID: 321242467}
   useCustomContent: 0
@@ -5614,7 +5614,7 @@ RectTransform:
   m_GameObject: {fileID: 1406600492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7469898, y: 1.7469898, z: 1.7469898}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1709615495}
   m_Father: {fileID: 1683270803}
@@ -5622,7 +5622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 56.37195, y: 66}
+  m_AnchoredPosition: {x: -41, y: 66}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1406600494
@@ -6012,7 +6012,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 466, y: -81}
+  m_AnchoredPosition: {x: 274, y: -81}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547158249
@@ -6169,7 +6169,7 @@ MonoBehaviour:
   hoverSound: {fileID: 0}
   clickSound: {fileID: 0}
   buttonVar: {fileID: 0}
-  normalText: {fileID: 0}
+  normalText: {fileID: 222814794}
   soundSource: {fileID: 0}
   rippleParent: {fileID: 775616606}
   useCustomContent: 0
@@ -6347,8 +6347,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -39, y: -1087}
-  m_SizeDelta: {x: 1080, y: 681.49}
+  m_AnchoredPosition: {x: -39, y: 47}
+  m_SizeDelta: {x: 1080, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1693338144
 GameObject:
@@ -6409,7 +6409,7 @@ RectTransform:
   m_GameObject: {fileID: 1707835179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7469898, y: 1.7469898, z: 1.7469898}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 753686467}
   m_Father: {fileID: 1683270803}
@@ -6417,7 +6417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -162, y: 66}
+  m_AnchoredPosition: {x: -215, y: 66}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1707835181
@@ -7410,12 +7410,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21439f8b6f3e3b48b481948ffe5da85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whiteball: {fileID: 4906127083307119439, guid: baa1c929544e1f444b21b0e7305b6eae, type: 3}
+  whiteball: {fileID: 5106454777627983146, guid: 42dfcab4fe498e84282137ad7923262a, type: 3}
   posin: {fileID: 2064722673}
   speed: 30
   anim: {fileID: 1318971616}
   nowPower: 1
-  MaxPower: 35
+  MaxPower: 30
   gageSpeed: 0.5
   PowerGage: {fileID: 927730810}
   turn: 0
