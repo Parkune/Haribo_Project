@@ -252,7 +252,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 8925873089283237145}
   m_HandleRect: {fileID: 0}
@@ -442,6 +442,7 @@ MonoBehaviour:
   plain: {fileID: 749160941449909473}
   pain: {fileID: 749160941670040973}
   particle: {fileID: 478758397222785226}
+  deathParticle: {fileID: 0}
 --- !u!1 &8925873090285147500
 GameObject:
   m_ObjectHideFlags: 0

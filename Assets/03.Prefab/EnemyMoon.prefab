@@ -252,7 +252,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 5591681881258306080}
   m_HandleRect: {fileID: 0}
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   physics: {fileID: 0}
-  enemyNum: 3
+  enemyNum: 5
   damage: 1
   hpSlider: {fileID: 5591681881269743519}
   stageManager: {fileID: 0}
@@ -443,6 +443,7 @@ MonoBehaviour:
   plain: {fileID: 787839691352624577}
   pain: {fileID: 6307213315221069409}
   particle: {fileID: 4150757190451128106}
+  deathParticle: {fileID: 0}
 --- !u!1 &5591681882262313557
 GameObject:
   m_ObjectHideFlags: 0
