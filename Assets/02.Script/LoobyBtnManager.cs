@@ -151,11 +151,6 @@ public class LoobyBtnManager : MonoBehaviour
             colorChange(24);
             stageBtn[24].GetComponent<BtnStageNum>().isClear = true;
         }
-/*        if (DataController.Instance._gameData.isClear5_5 == true)
-        {
-            colorChange(25);
-            stageBtn[25].GetComponent<BtnStageNum>().isClear = true;
-        }*/
     }
   
 

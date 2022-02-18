@@ -8,11 +8,6 @@ public class RotationShowWindow : MonoBehaviour
     public GameObject showWindow;
     float rotationSpeed = 10;
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

@@ -36,35 +36,6 @@ public class StageManager : MonoBehaviour
 
     bool isBallExist;
    
-    // Update is called once per frame
-    void Update()
-    {
-/*        if (BallStart.instance.isBallActive == true)
-        {
-            print("RBVelocity");
-            findBall();
-        }*/
-    }
-
-/*    void findBall()
-    {
-        if (GameObject.Find("Ball(Clone)") == true)
-        {
-            //print("Game");
-            Vector3 ballPos = GameObject.Find("Ball(Clone)").transform.position;
-            ballOriginPos = ballPos;
-            isBallExist = false;
-            BallStart.instance.isBallActive = true;
-        }
-        else if (GameObject.Find("Ball(Clone)") == false && isBallExist == false)
-        {
-            //print("NonGame");
-            Instantiate(particle[0], ballOriginPos, Quaternion.Euler(Vector3.zero));
-            //print(ballOriginPos);
-            isBallExist = true;
-            BallStart.instance.isBallActive = false;
-        }
-    }*/
     void FrictionForceData()
     {
         stageFrictionForce.Add(0, 0.3f);

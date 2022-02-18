@@ -36,8 +36,6 @@ public class Playershooter : MonoBehaviour
 
     private void Awake()
     {
-        
-
         turn = true;
     }
 
@@ -49,7 +47,6 @@ public class Playershooter : MonoBehaviour
 
         stageNum = stageManager.selectStageNum;
         stageManager.Ballct.TryGetValue(stageNum, out ballLimit);
-        //print(stageNum + ballLimit);
         uiManager = GameObject.FindGameObjectWithTag("UIMANAGER").GetComponent<UIManager>();
         nowPower = PowerGage.value;
         PowerGage.maxValue = MaxPower;
@@ -69,7 +66,6 @@ public class Playershooter : MonoBehaviour
         Ray ray;
         RaycastHit hitPoint;
 
-        // print(v);
         if (turn == false)
         {
             return;
@@ -128,11 +124,6 @@ public class Playershooter : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-
-            
-
-            // nowPower += MaxPower * Mathf.Sin(Time.time * speed);
-           // StopCoroutine("powerCorutain");
             
             nowPower += Time.deltaTime * 20;
             nowPower = Mathf.Clamp(nowPower, 0, 40);
@@ -204,13 +195,8 @@ public class Playershooter : MonoBehaviour
                     anim.SetBool("Shooting", false);
     }
 
-
-
-
     IEnumerator powerCorutain()
     {
-
-
         yield return null;
     }
 

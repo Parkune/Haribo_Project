@@ -34,10 +34,4 @@ public class TurnManager : MonoBehaviour
         playerTurn = false;
         playerST.turn = false;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //볼이 벨로시티 0되었을 때 알려줘!
-    }
 }

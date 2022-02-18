@@ -60,10 +60,6 @@ public class ClearManager : MonoBehaviour
         //if 리스트의 카운트가 0이 되면 클리어를 프린트한다.
     }
 
-
-    
-
-
     public void stageClear(int selectStageNum)
     {
 
@@ -167,10 +163,5 @@ public class ClearManager : MonoBehaviour
         {
             DataController.Instance._gameData.isClear5_5 = true;
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

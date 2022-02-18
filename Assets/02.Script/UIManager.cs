@@ -19,11 +19,6 @@ public class UIManager : MonoBehaviour
         set { shooterScript.ballLimit = value; }
     }
 
-    private void Awake()
-    {
-        
-    }
-
     public void TimebtnOn()
     {
         timebtnon.SetActive(false);

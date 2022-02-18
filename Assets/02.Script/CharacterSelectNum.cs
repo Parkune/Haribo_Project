@@ -6,14 +6,4 @@ public class CharacterSelectNum : MonoBehaviour
 {
     // Start is called before the first frame update
     public int characterBtnNum;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4906127083307119436}
   - component: {fileID: 4906127083307119437}
   - component: {fileID: 4906127083307119425}
-  - component: {fileID: 7629176091804755417}
   - component: {fileID: 4906127083307119438}
   - component: {fileID: 5247627147813487844}
   - component: {fileID: 4739341402976803398}
@@ -120,18 +119,6 @@ MonoBehaviour:
   collisionSound: {fileID: 0}
   isBallActive: 0
   particle: {fileID: 5027557607549268366, guid: 84cd977b2b441ec46a1c3681391a714a, type: 3}
---- !u!114 &7629176091804755417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4906127083307119439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8758fee22f0094290969d0dbaa197c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &4906127083307119438
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -26,8 +26,6 @@ public class DestroyZone : MonoBehaviour
             ballRB.velocity = ballRB.velocity * 0;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Playershooter>().turn = true;
 
-            print("´ê¾Ò´Ù");
-
         } else if(other.CompareTag("ENEMY"))
         {
             Destroy(other.gameObject);

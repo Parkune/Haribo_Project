@@ -34,8 +34,4 @@ public class SelectOptionManager : MonoBehaviour
             SceneManager.LoadScene("01Stage_Final");
         }
     }
-    public void selectCharacter()
-    {
-
-    }
 }

@@ -62,14 +62,9 @@ public class Enemy : MonoBehaviour, IenemyStatus
     }
     public void Resist(float resist)
     {
-        //resist = enemyResist;
         physics.dynamicFriction = resist;
     }
 
-    void Awake()
-    {
-
-    }
     [SerializeField]
     private GameObject stageManager;
     private Component enemyAnimation;

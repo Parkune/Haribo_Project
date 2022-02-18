@@ -17,9 +17,9 @@ public class EnemyStart : MonoBehaviour
 
     // Update is called once per frame
 
-    private void FixedUpdate()
-    {
-        velocity = rb.velocity;
-    }
+//    private void FixedUpdate()
+//    {
+//        velocity = rb.velocity;
+//    }
 
 }

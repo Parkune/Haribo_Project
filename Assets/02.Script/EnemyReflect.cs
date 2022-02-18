@@ -13,7 +13,6 @@ public class EnemyReflect : MonoBehaviour
         {
             sin1 = 0;
             cos1 = 1;
-
         }
         else
         {
@@ -72,52 +71,14 @@ public class EnemyReflect : MonoBehaviour
             Vector3 v1 = this.gameObject.GetComponent<BallStart>().velocity;
             Vector3 v2 = collision.gameObject.GetComponent<BallStart>().velocity;
             (ballMeRb.velocity, ballOtherRb.velocity) = calculateBall2BallColision(v1, v2, ballMeRb.position, ballOtherRb.position);
-
         }
     }
-
-
-
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("BALL"))
         {
             this.gameObject.GetComponent<Enemy>().Damage(1);
         }
-
-/*       if (collision.collider.tag == "BALL")
-        {
-
-                         Vector3 direct = collision.transform.position - this.transform.position;
-                        // 입사벡터를 알아본다. (충돌할때 충돌한 물체의 입사 벡터 노말값)
-                        Vector3 incomingVector = direct;
-                        incomingVector = incomingVector.normalized;
-                        // 충돌한 면의 법선 벡터를 구해낸다.
-                        Vector3 normalVector = collision.contacts[0].normal;
-                        // 법선 벡터와 입사벡터을 이용하여 반사벡터를 알아낸다.
-                        Vector3 reflectVector = Vector3.Reflect(incomingVector, normalVector); //반사각
-                        reflectVector = reflectVector.normalized;
-                        //Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
-                        //rb.velocity = reflectVector;
-        }*/
-
-        /*        if (collision.gameObject.CompareTag("BALL"))
-                {
-                    Rigidbody ballMeRb = this.gameObject.GetComponent<Rigidbody>();
-                    Rigidbody ballOtherRb = collision.gameObject.GetComponent<Rigidbody>();
-                    Vector3 v1 = this.gameObject.GetComponent<EnemyStart>().velocity;
-                    Vector3 v2 = collision.gameObject.GetComponent<BallStart>().velocity;
-                    (ballMeRb.velocity, ballOtherRb.velocity) = calculateBall2BallColision(v1, v2, ballMeRb.position, ballOtherRb.position);
-                }
-                if (collision.gameObject.CompareTag("ENEMY"))
-                {
-                    Rigidbody ballMeRb = this.gameObject.GetComponent<Rigidbody>();
-                    Rigidbody ballOtherRb = collision.gameObject.GetComponent<Rigidbody>();
-                    Vector3 v1 = this.gameObject.GetComponent<EnemyStart>().velocity;
-                    Vector3 v2 = collision.gameObject.GetComponent<EnemyStart>().velocity;
-                    (ballMeRb.velocity, ballOtherRb.velocity) = calculateBall2BallColision(v1, v2, ballMeRb.position, ballOtherRb.position);
-                }*/
     }
 
 
