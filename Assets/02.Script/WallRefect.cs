@@ -11,7 +11,12 @@ public class WallRefect : MonoBehaviour
         return b;
     }
 
+    Vector3 thisPos;
 
+    private void Start()
+    {
+        thisPos = this.gameObject.transform.position;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -19,7 +24,10 @@ public class WallRefect : MonoBehaviour
         {
             Rigidbody ballRB = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 velocity = collision.gameObject.GetComponent<BallStart>().velocity;
-            ballRB.velocity = calculateReflect(velocity, Vector3.zero, -collision.GetContact(0).normal);
+            //ballRB.velocity = calculateReflect(velocity, Vector3.zero, -collision.GetContact(0).normal);
+          //  Vector3 dir = collision.gameObject.transform.position - thisPos;
+            ContactPoint cp = collision.contacts[0];
+            ballRB.velocity  =  Vector3.Reflect(velocity, cp.normal);
         }
         else if(collision.gameObject.CompareTag("ENEMY"))
         {

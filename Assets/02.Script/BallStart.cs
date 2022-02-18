@@ -66,18 +66,6 @@ public class BallStart : MonoBehaviour
     {
         velocity = rb.velocity;
 
-        /*        if (rb.velocity.x<0)
-                {
-                    rb.velocity = rb.velocity - rb.velocity * 0.02f * Time.deltaTime;
-                    velocity = rb.velocity;
-
-                }
-                else if (rb.velocity.x>0)
-                {
-                    rb.velocity = velocity + rb.velocity * 0.02f * Time.deltaTime;
-                    velocity = rb.velocity;
-                }*/
-
         if (Math.Abs(velocity.x) < 0.05f  &&  Math.Abs(velocity.z) < 0.05f)
         {
             Invoke("TurnOn", 1.3f);

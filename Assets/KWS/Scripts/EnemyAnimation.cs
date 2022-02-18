@@ -17,14 +17,9 @@ public class EnemyAnimation : MonoBehaviour
         particle.Stop();
         deathParticle.Stop();
         collider = gameObject.GetComponent<Collider>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         enemy = gameObject.GetComponent<Enemy>();
-
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -42,7 +37,6 @@ public class EnemyAnimation : MonoBehaviour
     IEnumerator jellyPain()
     {
         yield return new WaitForSeconds(0.3333f);
-        print("SSIPAL");
         pain.SetActive(false);
         plain.SetActive(true);
     }

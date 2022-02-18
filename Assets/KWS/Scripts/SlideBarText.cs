@@ -17,12 +17,6 @@ public class SlideBarText : MonoBehaviour
         max.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void ChangedValue(float value)
     {
         if (value <= 15 && value > 3)
@@ -50,6 +44,5 @@ public class SlideBarText : MonoBehaviour
             max.SetActive(false);
 
         }
-        //print(value);
     }
 }

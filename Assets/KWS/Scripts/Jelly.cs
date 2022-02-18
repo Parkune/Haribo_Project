@@ -14,15 +14,6 @@ public class Jelly : MonoBehaviour
     {
         particle.Stop();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
-
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("BALL"))
@@ -33,7 +24,6 @@ public class Jelly : MonoBehaviour
             StartCoroutine("jellyPain");
         }
     }
-
 
     IEnumerator jellyPain()
     {
