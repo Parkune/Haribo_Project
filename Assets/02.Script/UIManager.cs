@@ -49,11 +49,12 @@ public class UIManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         shooterScript = player.GetComponent<Playershooter>();
         rotationScript = player.GetComponent<PlayerRotation>();
-        int a = displayBallCount;
+        // int a = displayBallCount;
         timebtnoff.SetActive(false);
         stopMenuUI.SetActive(false);
-        print(a);
-        Invoke("displayBallCT",0.1f);
+        fairUI.SetActive(false);
+        Time.timeScale = 1f;
+        Invoke("displayBallCT",0.2f);
     }
 
     public void ReturnGame()
@@ -75,9 +76,22 @@ public class UIManager : MonoBehaviour
         stopMenuUI.SetActive(true);
         rotationScript.toAction = true;
     } 
+
+    public GameObject fairUI;
+    public void failButton()
+    {
+        Time.timeScale = 0f;
+        fairUI.SetActive(true);
+        rotationScript.toAction = true;
+    }
     public void displayBallCT()
     {
         displayBall.text = displayBallCount.ToString();
+    }
+    public void OnRetry()
+    {
+        // 현재 씬 다시 불러오기
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void returnLooby()
@@ -94,10 +108,9 @@ public class UIManager : MonoBehaviour
            
             if(rotinTime > 3f)
             {
-                print("실행되었다.");
                 if(GameObject.FindGameObjectWithTag("BALL") == null)
                 {
-                    stopButton();
+                   failButton();
                 }
                 rotinTime = 0;
             }

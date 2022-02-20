@@ -19,9 +19,22 @@ public class ClearManager : MonoBehaviour
     void Start()
     {
         ClearPanel.SetActive(false);
-        Invoke("findEnemy", 0.8f);
+        StartCoroutine("FindEnemy");
         selectStageNum = GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().StagrNum;
     }
+
+    IEnumerator FindEnemy()
+    {
+
+        yield return new WaitForSeconds(0.8f);
+        enemys = GameObject.FindGameObjectsWithTag("ENEMY");
+        for (int i = 0; i < enemys.Length; i++)
+        {
+            enemyList.Add(enemys[i]);
+        }
+    }
+
+
     void findEnemy()
     {
         enemys = GameObject.FindGameObjectsWithTag("ENEMY");
@@ -49,7 +62,6 @@ public class ClearManager : MonoBehaviour
                     GameObject.FindGameObjectWithTag("Player").GetComponent<Playershooter>().turn = false;
                     DataController.Instance.SaveGameData();
                 }
-                //Invoke("findEnemy", 0.3f);
                 return;
 
             }

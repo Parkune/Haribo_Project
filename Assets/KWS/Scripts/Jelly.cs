@@ -28,7 +28,6 @@ public class Jelly : MonoBehaviour
     IEnumerator jellyPain()
     {
         yield return new WaitForSeconds(0.3333f);
-        print("SSIPAL");
         pain.SetActive(false);
         plain.SetActive(true);
     }

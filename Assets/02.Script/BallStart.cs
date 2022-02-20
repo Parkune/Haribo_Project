@@ -34,15 +34,16 @@ public class BallStart : MonoBehaviour
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
-        rb.velocity = startVelocity;
         this.gameObject.GetComponent<Collider>().material.dynamicFriction = frictionforce;
         turnManager = GameObject.FindGameObjectWithTag("TURNMANAGER").GetComponent<TurnManager>();
         turnManager.playerTurnOff();
+        rb.velocity = startVelocity;
         audioSource = this.gameObject.GetComponent<AudioSource>();
         if(GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnEffectSound == false)
         {
             audioSource.volume = 0;
         }
+
     }
 
     void TurnOn()
@@ -64,17 +65,25 @@ public class BallStart : MonoBehaviour
     public GameObject particle;
     private void FixedUpdate()
     {
+
         velocity = rb.velocity;
 
         if (Math.Abs(velocity.x) < 0.05f  &&  Math.Abs(velocity.z) < 0.05f)
         {
-            Invoke("TurnOn", 1.3f);
-            GameObject OB = Instantiate(particle, this.gameObject.transform.position, Quaternion.Euler(Vector3.zero));
-            this.gameObject.SetActive(false);
-            Destroy(OB, 2f);
-            Destroy(this.gameObject, 1.5f);
+            StartCoroutine("TurnOnPlayer");
             //isBallActive = true;
         }
+    }
+
+    IEnumerator TurnOnPlayer()
+    {
+        GameObject OB = Instantiate(particle, this.gameObject.transform.position, Quaternion.Euler(Vector3.zero));
+        this.gameObject.SetActive(false);
+        Destroy(OB, 2f);
+        Destroy(this.gameObject, 2.2f);
+        turnManager.playerTurnOn();
+       yield return new WaitForSeconds(1f);
+        
     }
 
     void setAcf(GameObject OB)
@@ -84,6 +93,7 @@ public class BallStart : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        this.audioSource.Stop();
         this.audioSource.Play();
     }
 

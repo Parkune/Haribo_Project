@@ -34,10 +34,6 @@ public class Playershooter : MonoBehaviour
     [SerializeField]
     int stageNum;
 
-    private void Awake()
-    {
-        turn = true;
-    }
 
 
     // Start is called before the first frame update
@@ -51,7 +47,7 @@ public class Playershooter : MonoBehaviour
         nowPower = PowerGage.value;
         PowerGage.maxValue = MaxPower;
         PowerGage.minValue = 0;
-
+        turn = true;
         lr = posin.GetComponent<LineRenderer>();
         anim = GetComponentInChildren<Animator>();
     }
