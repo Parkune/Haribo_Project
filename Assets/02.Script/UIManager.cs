@@ -55,6 +55,11 @@ public class UIManager : MonoBehaviour
         fairUI.SetActive(false);
         Time.timeScale = 1f;
         Invoke("displayBallCT",0.2f);
+#if UNITY_EDITOR
+
+#else
+        Application.targetFrameRate = 60;
+#endif
     }
 
     public void ReturnGame()

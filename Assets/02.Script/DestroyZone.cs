@@ -28,9 +28,9 @@ public class DestroyZone : MonoBehaviour
 
         } else if(other.CompareTag("ENEMY"))
         {
+            stageManager = GameObject.FindGameObjectWithTag("STAGEMANAGER");
+            stageManager.GetComponent<ClearManager>().enemyDie(other.gameObject.name);
             Destroy(other.gameObject);
-           stageManager = GameObject.FindGameObjectWithTag("STAGEMANAGER");
-           stageManager.GetComponent<ClearManager>().enemyDie(other.gameObject.name);
         }
     }
 }

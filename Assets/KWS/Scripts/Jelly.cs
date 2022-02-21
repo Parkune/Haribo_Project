@@ -25,6 +25,14 @@ public class Jelly : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+            pain.SetActive(true);
+            particle.Play();
+            plain.SetActive(false);
+            StartCoroutine("jellyPain");  
+    }
+
     IEnumerator jellyPain()
     {
         yield return new WaitForSeconds(0.3333f);

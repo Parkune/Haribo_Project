@@ -19,7 +19,6 @@ public class BtnStageNum : MonoBehaviour
     {
         GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().SelectStageBtn();
     }
-
     public void StageBtn(int i)
     {
         stageNum = i;

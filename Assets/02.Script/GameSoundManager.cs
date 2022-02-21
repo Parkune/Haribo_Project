@@ -9,7 +9,16 @@ public class GameSoundManager : MonoBehaviour
     void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
-        Invoke("soundOff", 0.1f);
+        StartCoroutine("SoundCheack");
+    }
+    
+    IEnumerator SoundCheack()
+    {
+        yield return new WaitForSeconds(0.1f);
+        if (GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnSound == false)
+        {
+            soundPlayer.volume = 0;
+        }
     }
 
     void soundOff()

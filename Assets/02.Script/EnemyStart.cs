@@ -14,12 +14,4 @@ public class EnemyStart : MonoBehaviour
         rb = this.gameObject.GetComponent<Rigidbody>();
         rb.velocity = startVelocity;
     }
-
-    // Update is called once per frame
-
-//    private void FixedUpdate()
-//    {
-//        velocity = rb.velocity;
-//    }
-
 }

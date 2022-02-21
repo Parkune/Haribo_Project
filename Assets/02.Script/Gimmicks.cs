@@ -44,7 +44,7 @@ public class Gimmicks : MonoBehaviour
 
     void Reflect(Collision collision)
     {
-       // print("반사함수 실행");
+        // print("반사함수 실행");
         Rigidbody ballRB = collision.gameObject.GetComponent<Rigidbody>();
         Vector3 velocity = collision.gameObject.GetComponent<BallStart>().velocity;
         ballRB.velocity = calculateReflect(velocity, Vector3.zero, -collision.GetContact(0).normal);
@@ -55,7 +55,7 @@ public class Gimmicks : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("BALL"))
         {
-             if (GimmickNum == 6)
+            if (GimmickNum == 6)
             {
                 BoxCollider box = this.gameObject.GetComponent<BoxCollider>();
                 Reflect(collision);
@@ -76,70 +76,60 @@ public class Gimmicks : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-    if(other.gameObject.CompareTag("BALL") )
-    {
-        if (GimmickNum == 1)
+        if (other.gameObject.CompareTag("BALL"))
         {
-            other.gameObject.transform.localScale = other.gameObject.transform.localScale * 1.5f;
-        }
-        if (GimmickNum == 2)
-        {
+            if (GimmickNum == 1)
+            {
+                other.gameObject.transform.localScale = other.gameObject.transform.localScale * 1.5f;
+            }
+            else if (GimmickNum == 2)
+            {
                 other.gameObject.transform.localScale = other.gameObject.transform.localScale * 0.5f;
 
-        }
-            if (GimmickNum == 3)
-        {
-
-            Rigidbody ballRB = other.gameObject.GetComponent<Rigidbody>();
-            ballRB.velocity = ballRB.velocity * 1.5f;
-        }
-        if (GimmickNum == 4)
-        {
-            Rigidbody ballRB = other.gameObject.GetComponent<Rigidbody>();
-            ballRB.velocity = ballRB.velocity * 0.5f;
-        }
-        if (GimmickNum == 5)
-        {
+            }
+            else if (GimmickNum == 3)
+            {
+                Rigidbody ballRB = other.gameObject.GetComponent<Rigidbody>();
+                ballRB.velocity = ballRB.velocity * 1.5f;
+            }
+            else if (GimmickNum == 4)
+            {
+                Rigidbody ballRB = other.gameObject.GetComponent<Rigidbody>();
+                ballRB.velocity = ballRB.velocity * 0.5f;
+            }
+            else if (GimmickNum == 5)
+            {
                 Rigidbody ballRB = other.gameObject.GetComponent<Rigidbody>();
                 ballRB.velocity = ballRB.velocity * 0;
-        }
-        if (GimmickNum == 8)
-        {
-            Vector3 velo = other.gameObject.GetComponent<BallStart>().velocity;
-            Vector3 trPosition = other.gameObject.GetComponent<Transform>().position;
-            Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
-            Vector3 vr = trPosition - this.gameObject.transform.position;
-            vr.Normalize();
-            float speed = -velo.magnitude;
-            Vector3 reflectVelocity = Vector3.Reflect(velo, vr);
-            rb.velocity = reflectVelocity * Mathf.Max(speed, 1f);
-
-            if (other.gameObject.GetComponent<BallStart>().Copy == false)
+            }
+            else if (GimmickNum == 8)
             {
-                other.gameObject.GetComponent<BallStart>().Copy = true;
-                GameObject copy = Instantiate(CopyBall, trPosition, Quaternion.identity);
-                copy.GetComponent<BallStart>().Copy = true;
+                Vector3 velo = other.gameObject.GetComponent<BallStart>().velocity;
+                Vector3 trPosition = other.gameObject.GetComponent<Transform>().position;
+                Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
+                Vector3 vr = trPosition - this.gameObject.transform.position;
+                vr.Normalize();
+                float speed = -velo.magnitude;
+                Vector3 reflectVelocity = Vector3.Reflect(velo, vr);
+                rb.velocity = reflectVelocity * Mathf.Max(speed, 1f);
 
-                Rigidbody copyrb = copy.GetComponent<Rigidbody>();
-                copyrb.velocity = reflectVelocity * Mathf.Max(speed, 1f);
+                if (other.gameObject.GetComponent<BallStart>().Copy == false)
+                {
+                    other.gameObject.GetComponent<BallStart>().Copy = true;
+                    GameObject copy = Instantiate(CopyBall, trPosition, Quaternion.identity);
+                    copy.GetComponent<BallStart>().Copy = true;
+
+                    Rigidbody copyrb = copy.GetComponent<Rigidbody>();
+                    copyrb.velocity = reflectVelocity * Mathf.Max(speed, 1f);
+                }
             }
         }
-     } else if(other.gameObject.CompareTag("ENEMY"))
-     {
-        if (GimmickNum == 5)
+        else if (other.gameObject.CompareTag("ENEMY"))
         {
-            other.gameObject.GetComponent<Enemy>().Damage(5);
-        }
-     }
-    }
-
-    float rotSpeed = 30f;
-
-    void Update()
-    {
-        if(GimmickNum == 9)
-        {
-           this.gameObject.transform.Rotate(new Vector3(0, rotSpeed * Time.deltaTime, 0));
+            if (GimmickNum == 5)
+            {
+                other.gameObject.GetComponent<Enemy>().Damage(5);
+            }
         }
     }
 }

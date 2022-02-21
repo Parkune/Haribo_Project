@@ -136,13 +136,11 @@ public class PlayerRotation : MonoBehaviour
     }
 
 
-bool isTouchDrag;
+    bool isTouchDrag;
     Vector2 myTouchPos;
-   public bool toAction;
+    public bool toAction;
     void UpdateForAndroid()
     {
-
-
             if (isTouchDrag)
             {
             Touch touch = Input.GetTouch(0);

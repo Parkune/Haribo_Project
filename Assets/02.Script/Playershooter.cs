@@ -140,7 +140,6 @@ public class Playershooter : MonoBehaviour
             posin.gameObject.SetActive(false);
             circleQuad.SetActive(false);
             anim.SetBool("Shooting", false);
-
         }
 
     }

@@ -56,10 +56,6 @@ public class DataController : MonoBehaviour
         SaveGameData();
     }
 
-    private void Start()
-    {
-
-    }
 
     // 저장된 게임 불러오기
     public void LoadGameData()

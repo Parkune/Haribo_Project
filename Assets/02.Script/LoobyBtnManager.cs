@@ -11,26 +11,18 @@ public class LoobyBtnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        // stageBtn = GameObject.FindGameObjectsWithTag("STAGEBUTTON");
-        /* for (int i = 0; i < stageBtn.Length; i++)
-         {
-             stageBtn[i].GetComponent<BtnStageNum>().StageBtn(i);
-         } */
        if (GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnEffectSound == false)
        { effectSoundToggle.isOn = false; } 
 
        if(GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnSound == false)
         { soundToggle.isOn = false; }
         stageClear();
-
     }
 
     public void stageClear()
     {
         colorChange(0);
         stageBtn[0].GetComponent<BtnStageNum>().isClear = true;
-
         if (DataController.Instance._gameData.isClear1_1 == true)
         {
             colorChange(1);
@@ -170,7 +162,6 @@ public class LoobyBtnManager : MonoBehaviour
         GameObject selectLoobyUIBtn = EventSystem.current.currentSelectedGameObject;
         print(selectLoobyUIBtn.name);
         int selectNum = selectLoobyUIBtn.GetComponent<OptionUISelectNum>().selectUInum;
-        print(selectNum);
         if (selectNum == 2)
         {
             likeBtn.SetActive(true);
@@ -231,8 +222,7 @@ public class LoobyBtnManager : MonoBehaviour
         } else
         {
             GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnEffectSound = false;
-        }
-  
+        } 
     }
 
     public void soundOnToggle()
@@ -245,7 +235,6 @@ public class LoobyBtnManager : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnSound = false;
         }
-        print(GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnSound);
     }
 
     void StageClearData()

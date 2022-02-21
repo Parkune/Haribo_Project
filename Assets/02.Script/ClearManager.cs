@@ -33,8 +33,6 @@ public class ClearManager : MonoBehaviour
             enemyList.Add(enemys[i]);
         }
     }
-
-
     void findEnemy()
     {
         enemys = GameObject.FindGameObjectsWithTag("ENEMY");
@@ -55,7 +53,6 @@ public class ClearManager : MonoBehaviour
                 enemys = enemyList.ToArray();
                 if (enemyList.Count == 0)
                 {
-                    print("게임종료");
                     Time.timeScale = 0.0001f;
                     ClearPanel.SetActive(true);
                     stageClear(selectStageNum);
@@ -63,7 +60,6 @@ public class ClearManager : MonoBehaviour
                     DataController.Instance.SaveGameData();
                 }
                 return;
-
             }
 
         }

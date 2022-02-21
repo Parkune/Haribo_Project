@@ -52,8 +52,6 @@ public class BallStart : MonoBehaviour
         //print("지금 턴온 합니다,");
     }
 
-
-
     public void zeroVelocity()
     {
         Invoke("TurnOn", 0.2f);
