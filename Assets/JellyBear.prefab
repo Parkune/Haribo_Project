@@ -26,16 +26,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2337432872127445772}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.55, y: 0.96, z: -3.44}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 2501938566391860368}
   - {fileID: 6458321439400476825}
   - {fileID: 4368647940745458630}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4271478334467373150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19886758, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 19886758, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
       propertyPath: InitialModule.startSize.scalar

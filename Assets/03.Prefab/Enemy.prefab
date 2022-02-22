@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 9042091642172615807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.9, y: 1.5, z: 13.53}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 9042091643051650813}
   m_Father: {fileID: 0}
@@ -103,6 +103,7 @@ MonoBehaviour:
   enemyNum: 1
   damage: 1
   hpSlider: {fileID: 9042091643028498939}
+  stageManager: {fileID: 0}
 --- !u!114 &9042091642172615798
 MonoBehaviour:
   m_ObjectHideFlags: 0
