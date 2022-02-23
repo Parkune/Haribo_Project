@@ -28,7 +28,7 @@ public class Playershooter : MonoBehaviour
     //조준선을 그리기 위한 함수
     [SerializeField]
     private LineRenderer lr;
-    public float maxDistance = 40;
+    public float maxDistance = 30;
     public GameObject circleQuad;
     public int ballLimit;
     [SerializeField]
@@ -121,8 +121,8 @@ public class Playershooter : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             
-            nowPower += Time.deltaTime * 20;
-            nowPower = Mathf.Clamp(nowPower, 0, 40);
+            nowPower += Time.deltaTime * 10;
+            nowPower = Mathf.Clamp(nowPower, 0, 30);
             PowerGage.value = nowPower;
             anim.SetBool("Shooting", true);
 
@@ -160,7 +160,7 @@ public class Playershooter : MonoBehaviour
             return;
         }
                      
-                     nowPower += Time.deltaTime * 20;
+                     nowPower += Time.deltaTime * 10;
                      nowPower = Mathf.Clamp(nowPower, 0, 30);
                      PowerGage.value = nowPower;
                      anim.SetBool("Shooting", true);
