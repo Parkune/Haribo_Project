@@ -55,10 +55,12 @@ public class UIManager : MonoBehaviour
         fairUI.SetActive(false);
         Time.timeScale = 1f;
         Invoke("displayBallCT",0.2f);
+        System.GC.Collect();
 #if UNITY_EDITOR
 
 #else
         Application.targetFrameRate = 60;
+        System.GC.Collect();
 #endif
     }
 
