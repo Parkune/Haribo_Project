@@ -9,13 +9,15 @@ using UnityEngine.EventSystems;
 public class PlayerRotation : MonoBehaviour
 {
     public float zPosition;
-    public bool Left,Right;
+    public bool Left, Right;
     public float moveSpeed = 10f;
+    public Animator anim;
+
     public Vector3 ClampPosition(Vector3 position)
     {
         return new Vector3
         (
-        Mathf.Clamp(position.x, -4f, 4f) , this.transform.position.y, this.transform.position.z
+        Mathf.Clamp(position.x, -4f, 4f), this.transform.position.y, this.transform.position.z
         );
     }
     // Start is called before the first frame update
@@ -24,20 +26,22 @@ public class PlayerRotation : MonoBehaviour
         Transform tr = this.gameObject.transform;
         zPosition = tr.transform.position.x;
         toAction = false;
+        anim = GetComponentInChildren<Animator>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
 #if UNITY_EDITOR
-     
-     
+
+
         UpdateForUnityEditor();
 
-        
+
         //zPosition += Input.GetAxisRaw("Horizontal") * Time.deltaTime * moveSpeed;
         //zPosition =  Mathf.Clamp(zPosition, -2.5f, 2.5f);
-    //    transform.position = new Vector3(zPosition, this.gameObject.transform.position.y, transform.position.z);
+        //    transform.position = new Vector3(zPosition, this.gameObject.transform.position.y, transform.position.z);
 
         toMove();
 
@@ -55,11 +59,11 @@ public class PlayerRotation : MonoBehaviour
 
     void UpdateForUnityEditor()
     {
-        if(EventSystem.current.IsPointerOverGameObject())
-	    {  
-        return;
-	         //클릭 처리
-	    }
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+            //클릭 처리
+        }
         //먼저 계산을 위해 마우스와 게임 오브젝트의 현재의 좌표를 임시로 저장합니다.
         Vector3 mPosition = Input.mousePosition; //마우스 좌표 저장
         Vector3 oPosition = transform.position; //게임 오브젝트 좌표 저장
@@ -72,20 +76,20 @@ public class PlayerRotation : MonoBehaviour
 
         //화면의 픽셀별로 변화되는 마우스의 좌표를 유니티의 좌표로 변화해 줘야 합니다.
         //그래야, 위치를 찾아갈 수 있겠습니다.
-    
+
         //Vector3 target = Camera.main.ScreenToWorldPoint(mPosition);
         //print(target);
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitResult;
         if (Physics.Raycast(ray, out hitResult))
         {
-            if(hitResult.collider.gameObject.CompareTag("STAGE"))
-            { 
+            if (hitResult.collider.gameObject.CompareTag("STAGE"))
+            {
                 Vector3 playerToMouse = hitResult.point - this.transform.position;
                 playerToMouse.y = 0;
                 playerToMouse.Normalize();
 
-                transform.right = playerToMouse ;
+                transform.right = playerToMouse;
             }
         }
 
@@ -94,14 +98,14 @@ public class PlayerRotation : MonoBehaviour
     public void toMove()
     {
         transform.localPosition = ClampPosition(transform.localPosition);
-       
-        if(Right)
+
+        if (Right)
         {
-             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
         }
-        if(Left)
+        if (Left)
         {
-             transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+            transform.position += Vector3.left * moveSpeed * Time.deltaTime;
         }
 
     }
@@ -109,18 +113,18 @@ public class PlayerRotation : MonoBehaviour
     public void pressRightUp()
     {
         Invoke("toRight", 0.05f);
-       // print(Left + "라이트펄스");
+        // print(Left + "라이트펄스");
     }
     void toRight()
     {
         Right = false;
     }
-        public void pressRightDown()
+    public void pressRightDown()
     {
         Right = true;
         //print(Left + "라이트트루");
     }
-        public void pressLeftUp()
+    public void pressLeftUp()
     {
         Invoke("toLeft", 0.05f);
         //print(Left + "레프트펄스");
@@ -132,7 +136,7 @@ public class PlayerRotation : MonoBehaviour
     public void pressLeftDown()
     {
         Left = true;
-       // print(Left + "레프트 트루");
+        // print(Left + "레프트 트루");
     }
 
 
@@ -141,51 +145,54 @@ public class PlayerRotation : MonoBehaviour
     public bool toAction;
     void UpdateForAndroid()
     {
-            if (isTouchDrag)
-            {
+        if (isTouchDrag)
+        {
             Touch touch = Input.GetTouch(0);
-                RaycastHit hitInfo;
+            RaycastHit hitInfo;
 
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);
 
-                if(Physics.Raycast(ray, out hitInfo, 500f))
+            if (Physics.Raycast(ray, out hitInfo, 500f))
+            {
+                if (hitInfo.collider.gameObject.CompareTag("STAGE"))
                 {
-                    if (hitInfo.collider.gameObject.CompareTag("STAGE"))
-                    {
-                        Vector3 playerToMouse = hitInfo.point - this.transform.position;
-                        playerToMouse.y = 0;
-                        playerToMouse.Normalize();
+                    Vector3 playerToMouse = hitInfo.point - this.transform.position;
+                    playerToMouse.y = 0;
+                    playerToMouse.Normalize();
 
-                        transform.right = playerToMouse;
-                    }
+                    transform.right = playerToMouse;
                 }
             }
+        }
 
-            if(toAction == false && Right == false && Left ==false)
-            { 
-                if (Input.touchCount > 0)
+        if (toAction == false && Right == false && Left == false)
+        {
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Began)
                 {
-                    Touch touch = Input.GetTouch(0);
-
-                    if (touch.phase == TouchPhase.Began)
-                    {
-                        isTouchDrag = true;
-                        this.gameObject.GetComponent<Playershooter>().powerLimit();
-                    }
-                    else if (touch.phase == TouchPhase.Moved)
-                    {
-                        this.gameObject.GetComponent<Playershooter>().PowerCharge();
-                    }
-                    else if (touch.phase == TouchPhase.Stationary)
-                    {
-                        this.gameObject.GetComponent<Playershooter>().PowerCharge();
-                    }
-                    else if (touch.phase == TouchPhase.Ended)
-                    {
-                        isTouchDrag = false;
-                        this.gameObject.GetComponent<Playershooter>().Shooting();
-                    }
+                    isTouchDrag = true;
+                    this.gameObject.GetComponent<Playershooter>().powerLimit();
+                    anim.SetTrigger("Shoot");
+                    anim.SetBool("Shooting", true);
+                }
+                else if (touch.phase == TouchPhase.Moved)
+                {
+                    this.gameObject.GetComponent<Playershooter>().PowerCharge();
+                }
+                else if (touch.phase == TouchPhase.Stationary)
+                {
+                    this.gameObject.GetComponent<Playershooter>().PowerCharge();
+                }
+                else if (touch.phase == TouchPhase.Ended)
+                {
+                    isTouchDrag = false;
+                    this.gameObject.GetComponent<Playershooter>().Shooting();
+                    anim.SetBool("Shooting", false);
                 }
             }
+        }
     }
 }

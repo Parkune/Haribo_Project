@@ -19,8 +19,8 @@ public class Playershooter : MonoBehaviour
     public float gageSpeed = 30f;
     public Slider PowerGage;
 
-    
-    
+
+
     private StageManager stageManager;
     private UIManager uiManager;
     public bool turn;
@@ -38,7 +38,7 @@ public class Playershooter : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {   
+    {
         stageManager = GameObject.FindGameObjectWithTag("STAGEMANAGER").GetComponent<StageManager>();
 
         stageNum = stageManager.selectStageNum;
@@ -117,15 +117,13 @@ public class Playershooter : MonoBehaviour
             nowPower = 0f;
             PowerGage.value = 0;
             anim.SetTrigger("Shoot");
+            anim.SetBool("Shooting", true);
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            
             nowPower += Time.deltaTime * 10;
             nowPower = Mathf.Clamp(nowPower, 0, 30);
             PowerGage.value = nowPower;
-            anim.SetBool("Shooting", true);
-
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
@@ -159,11 +157,11 @@ public class Playershooter : MonoBehaviour
         {
             return;
         }
-                     
-                     nowPower += Time.deltaTime * 10;
-                     nowPower = Mathf.Clamp(nowPower, 0, 30);
-                     PowerGage.value = nowPower;
-                     anim.SetBool("Shooting", true);
+
+        nowPower += Time.deltaTime * 10;
+        nowPower = Mathf.Clamp(nowPower, 0, 30);
+        PowerGage.value = nowPower;
+        anim.SetBool("Shooting", true);
     }
     public void Shooting()
     {
@@ -175,19 +173,19 @@ public class Playershooter : MonoBehaviour
         {
             return;
         }
-                    float z = -PowerGage.value * Mathf.Sin(transform.eulerAngles.y * Mathf.Deg2Rad);
-                    float x = PowerGage.value * Mathf.Cos(transform.eulerAngles.y * Mathf.Deg2Rad);
-                    GameObject ball = Instantiate(whiteball, posin.position, Quaternion.Euler(Vector3.zero));
-                    ball.GetComponent<BallStart>().startVelocity = new Vector3(x, 0, z);
-                    PowerGage.value = PowerGage.minValue;
-                    ballLimit -= 1;
-                    uiManager.displayBallCT();
-                    turn = false;
-                    PowerGage.value = 0;
-                    nowPower = 0f;
-                    posin.gameObject.SetActive(false);
-                    circleQuad.SetActive(false);
-                    anim.SetBool("Shooting", false);
+        float z = -PowerGage.value * Mathf.Sin(transform.eulerAngles.y * Mathf.Deg2Rad);
+        float x = PowerGage.value * Mathf.Cos(transform.eulerAngles.y * Mathf.Deg2Rad);
+        GameObject ball = Instantiate(whiteball, posin.position, Quaternion.Euler(Vector3.zero));
+        ball.GetComponent<BallStart>().startVelocity = new Vector3(x, 0, z);
+        PowerGage.value = PowerGage.minValue;
+        ballLimit -= 1;
+        uiManager.displayBallCT();
+        turn = false;
+        PowerGage.value = 0;
+        nowPower = 0f;
+        posin.gameObject.SetActive(false);
+        circleQuad.SetActive(false);
+        anim.SetBool("Shooting", false);
     }
 
     IEnumerator powerCorutain()
