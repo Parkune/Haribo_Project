@@ -98,13 +98,19 @@ public class UIManager : MonoBehaviour
     public void OnRetry()
     {
         // 현재 씬 다시 불러오기
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void returnLooby()
     {
+
         SceneManager.LoadScene("LOBBY");
+        
     }
+
+
+
     float rotinTime = 0;
     // Update is called once per frame
     void Update()
