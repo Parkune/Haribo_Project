@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
+using UnityEngine.SceneManagement;
 
 public class GoogleAdsManagerAD : MonoBehaviour
 {
@@ -21,7 +22,6 @@ public class GoogleAdsManagerAD : MonoBehaviour
 #endif
         MobileAds.Initialize(initStatus => { });
         RequestInterstitial();
-        Invoke("Show", 0.5f);
     }
 
     // Update is called once per frame
@@ -72,8 +72,8 @@ public class GoogleAdsManagerAD : MonoBehaviour
 
     public void HandleOnAdClosed(object sender, EventArgs args)
     {
-        MonoBehaviour.print("HandleAdClosed event received");
         RequestInterstitial();
+        SceneManager.LoadScene("LOBBY");
     }
 
     public void HandleOnAdLeavingApplication(object sender, EventArgs args)

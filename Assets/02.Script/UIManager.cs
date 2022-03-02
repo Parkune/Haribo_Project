@@ -73,7 +73,7 @@ public class UIManager : MonoBehaviour
 
     public void returnMenu()
     {
-        SceneManager.LoadScene("LOOBY");
+        SceneManager.LoadScene("LOBBY");
     }
 
     public GameObject stopMenuUI;
