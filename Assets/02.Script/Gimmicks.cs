@@ -31,6 +31,7 @@ public class Gimmicks : MonoBehaviour
 
     void Start()
     {
+        gimmickAnimation.SetActive(false);
         // GimmickManager.gimicDic.TryGetValue(GimmickNum, out myFuction);
         // print(myFuction);
         if (GimmickNum == 7)
@@ -64,14 +65,17 @@ public class Gimmicks : MonoBehaviour
                 Color color = mat.color;
                 color.a = 0.4f;
                 mat.color = color;
+                gimmickAnimation.SetActive(true);
             }
             else if (GimmickNum == 7)
             {
                 Reflect(collision);
+                gimmickAnimation.SetActive(true);
             }
         }
 
     }
+    public GameObject gimmickAnimation;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -81,26 +85,30 @@ public class Gimmicks : MonoBehaviour
             if (GimmickNum == 1)
             {
                 other.gameObject.transform.localScale = other.gameObject.transform.localScale * 1.5f;
+                gimmickAnimation.SetActive(true);
             }
             else if (GimmickNum == 2)
             {
                 other.gameObject.transform.localScale = other.gameObject.transform.localScale * 0.5f;
-
+                gimmickAnimation.SetActive(true);
             }
             else if (GimmickNum == 3)
             {
                 Rigidbody ballRB = other.gameObject.GetComponent<Rigidbody>();
                 ballRB.velocity = ballRB.velocity * 1.5f;
+                gimmickAnimation.SetActive(true);
             }
             else if (GimmickNum == 4)
             {
                 Rigidbody ballRB = other.gameObject.GetComponent<Rigidbody>();
                 ballRB.velocity = ballRB.velocity * 0.5f;
+                gimmickAnimation.SetActive(true);
             }
             else if (GimmickNum == 5)
             {
                 Rigidbody ballRB = other.gameObject.GetComponent<Rigidbody>();
                 ballRB.velocity = ballRB.velocity * 0;
+                gimmickAnimation.SetActive(true);
             }
             else if (GimmickNum == 8)
             {
