@@ -11,12 +11,20 @@ public class LoobyBtnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       if (GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnEffectSound == false)
-       { effectSoundToggle.isOn = false; } 
+        characterList[0].SetActive(true);
+        if (GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnEffectSound == false)
+        { effectSoundToggle.isOn = false; }
 
-       if(GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnSound == false)
+        if (GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnSound == false)
         { soundToggle.isOn = false; }
         stageClear();
+        characterSelectNum = ShowCharacter.instance.selectCharacterNum;
+        if (characterList[0].activeSelf == true)
+        {
+            characterList[0].SetActive(false);
+            characterList[characterSelectNum].SetActive(true);
+        }
+
     }
 
     public void stageClear()
@@ -144,7 +152,7 @@ public class LoobyBtnManager : MonoBehaviour
             stageBtn[24].GetComponent<BtnStageNum>().isClear = true;
         }
     }
-  
+
 
     void colorChange(int i)
     {
@@ -179,7 +187,7 @@ public class LoobyBtnManager : MonoBehaviour
         }
     }
     public GameObject[] characterList;
-    
+
     public void characterChangeBtn(int i)
     {
         characterList[0].SetActive(false);
@@ -216,13 +224,14 @@ public class LoobyBtnManager : MonoBehaviour
     public Toggle soundToggle;
     public void effectSoundOnToggle()
     {
-        if(effectSoundToggle.isOn)
+        if (effectSoundToggle.isOn)
         {
             GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnEffectSound = true;
-        } else
+        }
+        else
         {
             GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnEffectSound = false;
-        } 
+        }
     }
 
     public void soundOnToggle()
@@ -264,16 +273,16 @@ public class LoobyBtnManager : MonoBehaviour
         BtnDic.Add(23, DataController.Instance._gameData.isClear5_3);
         BtnDic.Add(24, DataController.Instance._gameData.isClear5_4);
         BtnDic.Add(25, DataController.Instance._gameData.isClear5_5);
-        
+
     }
 
     public void extiGame()
     {
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-    #else
+#else
         Application.Quit();
-    #endif
+#endif
     }
 
 

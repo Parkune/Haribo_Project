@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class ShowCharacter : MonoBehaviour
 {
+    public static ShowCharacter instance;
     public GameObject[] characterSkin;
     public int selectCharacterNum;
+    public GameObject playerSelectWhile;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

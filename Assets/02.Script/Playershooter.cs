@@ -10,7 +10,7 @@ public class Playershooter : MonoBehaviour
     public Transform posin;
     public float speed = 5f;
     public Animator anim;
-
+    public GameObject[] setAnim;
 
 
     //파워게이지를 제어하는 함수
@@ -40,7 +40,6 @@ public class Playershooter : MonoBehaviour
     void Start()
     {
         stageManager = GameObject.FindGameObjectWithTag("STAGEMANAGER").GetComponent<StageManager>();
-
         stageNum = stageManager.selectStageNum;
         stageManager.Ballct.TryGetValue(stageNum, out ballLimit);
         uiManager = GameObject.FindGameObjectWithTag("UIMANAGER").GetComponent<UIManager>();
@@ -49,14 +48,14 @@ public class Playershooter : MonoBehaviour
         PowerGage.minValue = 0;
         turn = true;
         lr = posin.GetComponent<LineRenderer>();
-        anim = GetComponentInChildren<Animator>();
+        //anim = GetComponentInChildren<Animator>();
     }
 
 
     // Update is called once per frame
     void Update()
     {
-
+        //SetAnimator();
         float z = -PowerGage.value * Mathf.Sin(transform.eulerAngles.y * Mathf.Deg2Rad);
         float x = PowerGage.value * Mathf.Cos(transform.eulerAngles.y * Mathf.Deg2Rad);
         Ray ray;
@@ -139,7 +138,6 @@ public class Playershooter : MonoBehaviour
             circleQuad.SetActive(false);
             anim.SetBool("Shooting", false);
         }
-
     }
 
     public void powerLimit()
@@ -193,5 +191,26 @@ public class Playershooter : MonoBehaviour
         yield return null;
     }
 
+
+    public void SetAnimator()
+    {
+        print("MoFuck");
+        if (ShowCharacter.instance.selectCharacterNum == 0)
+        {
+            anim = setAnim[0].GetComponent<Animator>();
+        }
+        if (ShowCharacter.instance.selectCharacterNum == 1)
+        {
+            anim = setAnim[1].GetComponent<Animator>();
+        }
+        if (ShowCharacter.instance.selectCharacterNum == 2)
+        {
+            anim = setAnim[2].GetComponent<Animator>();
+        }
+        if (ShowCharacter.instance.selectCharacterNum == 3)
+        {
+            anim = setAnim[3].GetComponent<Animator>();
+        }
+    }
 
 }

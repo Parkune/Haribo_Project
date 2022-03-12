@@ -13,6 +13,7 @@ public class StageManager : MonoBehaviour
     public int selectStageNum;
     public GameObject[] particle;
     Vector3 ballOriginPos;
+    GameObject anim;
 
     private void Awake()
     {
@@ -28,14 +29,18 @@ public class StageManager : MonoBehaviour
         selectStageNum = GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().StagrNum;
         print(selectStageNum);
         Instantiate(stage[selectStageNum], spwanPosition);
+        Invoke("Setanim", 0.2f);
     }
 
 
+    void Setanim()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Playershooter>().SetAnimator();
+    }
 
-    
 
     bool isBallExist;
-   
+
     void FrictionForceData()
     {
         stageFrictionForce.Add(0, 0.3f);
