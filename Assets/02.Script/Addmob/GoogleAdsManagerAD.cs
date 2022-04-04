@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GoogleAdsManagerAD : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GoogleAdsManagerAD : MonoBehaviour
     void Start()
     {
 #if UNITY_ANDROID
-        string appId = "ca-app-pub-3940256099942544~3347511713";
+        string appId = "ca-app-pub-7301815494389627~4746979930";
 #elif UNITY_IPHONE
         string appId = "ca-app-pub-3940256099942544~1458002511";
 #else
@@ -26,11 +27,10 @@ public class GoogleAdsManagerAD : MonoBehaviour
 
     // Update is called once per frame
 
-
     private void RequestInterstitial()
     {
 #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+        string adUnitId = "ca-app-pub-7301815494389627/6339618429";
 #elif UNITY_IPHONE
         string adUnitId = "ca-app-pub-3940256099942544/4411468910";
 #else
@@ -73,16 +73,30 @@ public class GoogleAdsManagerAD : MonoBehaviour
     public void HandleOnAdClosed(object sender, EventArgs args)
     {
         RequestInterstitial();
+        if(admobBtn == 1)
+        { 
         SceneManager.LoadScene("LOBBY");
+        } else if (admobBtn == 2)
+        {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
     }
+    int admobBtn;
 
     public void HandleOnAdLeavingApplication(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdLeavingApplication event received");
     }
-   public void Show()
+   public void ShowLooby()
     {
-        StartCoroutine("ShowScreenAd");
+        admobBtn = 1;
+        StartCoroutine(ShowScreenAd());
+    }
+    public void ShowretryGame()
+    {
+        admobBtn = 2;
+        StartCoroutine(ShowScreenAd());
     }
 
     private IEnumerator ShowScreenAd()

@@ -18,7 +18,10 @@ public class LoobyBtnManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("OPTIONOBJECT").GetComponent<SelectOptionManager>().isOnSound == false)
         { soundToggle.isOn = false; }
         stageClear();
-        characterSelectNum = ShowCharacter.instance.selectCharacterNum;
+        if(characterSelectNum != 0)
+        { 
+            characterSelectNum = ShowCharacter.instance.selectCharacterNum;
+        }
         if (characterList[0].activeSelf == true)
         {
             characterList[0].SetActive(false);

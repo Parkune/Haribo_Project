@@ -10,6 +10,7 @@ public class EnemyAnimation : MonoBehaviour
     public ParticleSystem deathParticle;
     Collider collider;
     private Component enemy;
+    private WaitForSeconds painDeley = new WaitForSeconds(0.3333f);
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,7 @@ public class EnemyAnimation : MonoBehaviour
 
     IEnumerator jellyPain()
     {
-        yield return new WaitForSeconds(0.3333f);
+        yield return painDeley;
         pain.SetActive(false);
         plain.SetActive(true);
     }

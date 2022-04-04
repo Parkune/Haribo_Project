@@ -677,6 +677,7 @@ MonoBehaviour:
   - {fileID: 706089109}
   - {fileID: 77667377}
   selectCharacterNum: 0
+  playerSelectWhile: {fileID: 0}
 --- !u!4 &157928336
 Transform:
   m_ObjectHideFlags: 0
@@ -2450,7 +2451,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 816530035}
         m_TargetAssemblyTypeName: GoogleAdsManagerAD, Assembly-CSharp
-        m_MethodName: Show
+        m_MethodName: ShowLooby
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3958,9 +3959,9 @@ MonoBehaviour:
   clickEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 816530033}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OnRetry
+      - m_Target: {fileID: 816530035}
+        m_TargetAssemblyTypeName: GoogleAdsManagerAD, Assembly-CSharp
+        m_MethodName: ShowretryGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4705,7 +4706,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BACK
+  m_text: ReturnGame
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 84dd14695854bbc43a5faa24fcf93d0d, type: 2}
   m_sharedMaterial: {fileID: 21261991626553910, guid: 84dd14695854bbc43a5faa24fcf93d0d, type: 2}
@@ -7216,7 +7217,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 816530035}
         m_TargetAssemblyTypeName: GoogleAdsManagerAD, Assembly-CSharp
-        m_MethodName: Show
+        m_MethodName: ShowLooby
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8031,6 +8032,7 @@ MonoBehaviour:
   whiteball: {fileID: 5106454777627983146, guid: 42dfcab4fe498e84282137ad7923262a, type: 3}
   posin: {fileID: 2064722673}
   speed: 30
+  anim: {fileID: 0}
   setAnim:
   - {fileID: 1318971615}
   - {fileID: 216678967}
@@ -8249,6 +8251,7 @@ GameObject:
   - component: {fileID: 2020320198}
   - component: {fileID: 2020320197}
   - component: {fileID: 2020320196}
+  - component: {fileID: 2020320201}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -8415,7 +8418,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 816530035}
         m_TargetAssemblyTypeName: GoogleAdsManagerAD, Assembly-CSharp
-        m_MethodName: Show
+        m_MethodName: ShowLooby
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8455,6 +8458,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020320194}
   m_CullTransparentMesh: 0
+--- !u!114 &2020320201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020320194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a107c9d352bbb341af5fa50859d2a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BtnNum: 1
 --- !u!1 &2044671707
 GameObject:
   m_ObjectHideFlags: 0

@@ -258,6 +258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7618223220038053876, guid: 59cd8870e2412fa48aba6ac1ba836722, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59cd8870e2412fa48aba6ac1ba836722, type: 3}
 --- !u!4 &6711631746824656170 stripped
@@ -345,6 +349,10 @@ PrefabInstance:
     - target: {fileID: 855619629659414820, guid: a427bf7c398287a418d26368c629258b, type: 3}
       propertyPath: m_Name
       value: IceParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 855619629659414820, guid: a427bf7c398287a418d26368c629258b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 855619629659711918, guid: a427bf7c398287a418d26368c629258b, type: 3}
       propertyPath: m_RootOrder
@@ -617,6 +625,10 @@ PrefabInstance:
     - target: {fileID: 6448289154819948263, guid: 7f06ea1345e22464b9bc3a17524ee044, type: 3}
       propertyPath: m_Name
       value: NatureParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448289154819948263, guid: 7f06ea1345e22464b9bc3a17524ee044, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6448289154820043917, guid: 7f06ea1345e22464b9bc3a17524ee044, type: 3}
       propertyPath: m_RootOrder
@@ -945,6 +957,10 @@ PrefabInstance:
     - target: {fileID: 6621075009583567880, guid: 59cd8870e2412fa48aba6ac1ba836722, type: 3}
       propertyPath: m_Name
       value: Enemy (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7618223220038053876, guid: 59cd8870e2412fa48aba6ac1ba836722, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59cd8870e2412fa48aba6ac1ba836722, type: 3}
@@ -1640,6 +1656,10 @@ PrefabInstance:
       propertyPath: deathParticle
       value: 
       objectReference: {fileID: 538677779018486867}
+    - target: {fileID: 478758397204665442, guid: b22cbc261ad1f60489b34d1341eebe19, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8925873089283237145, guid: b22cbc261ad1f60489b34d1341eebe19, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1779,6 +1799,10 @@ PrefabInstance:
     - target: {fileID: 6448289154819948263, guid: 7f06ea1345e22464b9bc3a17524ee044, type: 3}
       propertyPath: m_Name
       value: NatureParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448289154819948263, guid: 7f06ea1345e22464b9bc3a17524ee044, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6448289154820043917, guid: 7f06ea1345e22464b9bc3a17524ee044, type: 3}
       propertyPath: m_RootOrder

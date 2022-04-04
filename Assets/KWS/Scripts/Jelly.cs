@@ -7,6 +7,7 @@ public class Jelly : MonoBehaviour
     public GameObject plain;
     public GameObject pain;
     public ParticleSystem particle;
+    private WaitForSeconds jellyPainDeley = new WaitForSeconds(0.3333f);
 
 
     // Start is called before the first frame update
@@ -35,7 +36,7 @@ public class Jelly : MonoBehaviour
 
     IEnumerator jellyPain()
     {
-        yield return new WaitForSeconds(0.3333f);
+        yield return jellyPainDeley;
         pain.SetActive(false);
         plain.SetActive(true);
     }
