@@ -72,30 +72,35 @@ public class StageManager : MonoBehaviour
 
     void AddData()
     {
+        //1테마
         Ballct.Add(0, 3);
         Ballct.Add(1, 3);
         Ballct.Add(2, 3);
         Ballct.Add(3, 4);
         Ballct.Add(4, 3);
+        //2테마
         Ballct.Add(5, 3);
         Ballct.Add(6, 3);
-        Ballct.Add(7, 3);
+        Ballct.Add(7, 4);
         Ballct.Add(8, 4);
-        Ballct.Add(9, 3);
+        Ballct.Add(9, 4);
+        //3테마
         Ballct.Add(10, 4);
-        Ballct.Add(11, 4);
+        Ballct.Add(11, 5);
         Ballct.Add(12, 7);
-        Ballct.Add(13, 5);
+        Ballct.Add(13, 6);
         Ballct.Add(14, 7);
-        Ballct.Add(15, 5);
-        Ballct.Add(16, 5);
+        //4테마
+        Ballct.Add(15, 6);
+        Ballct.Add(16, 7);
         Ballct.Add(17, 5);
-        Ballct.Add(18, 4);
-        Ballct.Add(19, 4);
+        Ballct.Add(18, 6);
+        Ballct.Add(19, 6);
+        //5테마
         Ballct.Add(20, 6);
-        Ballct.Add(21, 5);
-        Ballct.Add(22, 6);
-        Ballct.Add(23, 5);
+        Ballct.Add(21, 7);
+        Ballct.Add(22, 7);
+        Ballct.Add(23, 7);
         Ballct.Add(24, 9);
     }
 
